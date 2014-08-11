@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AFNetworkActivityLogger.h"
+#import "Appirater.h"
 
 @implementation AppDelegate
 
@@ -20,6 +21,34 @@
     
     [[AFNetworkActivityLogger sharedLogger] startLogging];
     [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelDebug];
+    
+    
+    // App Store id
+    [Appirater setAppId:@"000000000"];
+    
+    // インストール後、再びメッセージを表示するまでの日数。(デフォルト:30日)
+    [Appirater setDaysUntilPrompt: 30];
+    
+    // 「後で見る」を選択したときにメッセージを再び表示するまでの日数。(デフォルト:1日)
+    [Appirater setTimeBeforeReminding: 1];
+    
+    // 再びメッセージを表示するまでの起動回数。(デフォルト:20回)
+    [Appirater setUsesUntilPrompt: 20];
+    
+    // ユーザーがアプリ内で何か特別な操作をしたときに意図的にメッセージを表示するか否か。(デフォルト:-1)
+    // 値 : -1=無効, 1=有効
+    // 表示する場合は、任意の箇所に [Appirater userDidSignificantEvent:YES] を呼ぶ。
+    [Appirater setSignificantEventsUntilPrompt: -1];
+    
+    //　自分のLocalizedFilesを使いたい時に指定
+    //[Appirater setAlwaysUseMainBundle: YES];
+    
+    // デバッグモードの有無。YESにすると起動の度に表示される。(デフォルト:NO)
+    #ifdef DEBUG
+    [Appirater setDebug: YES];
+    #endif
+    
+    [Appirater appLaunched:YES];
     
     return YES;
 }

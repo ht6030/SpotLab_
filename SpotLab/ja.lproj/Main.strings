@@ -1,0 +1,24 @@
+
+/* Class = "IBUITabBarItem"; title = "マイページ"; ObjectID = "0gn-Kw-d2h"; */
+"0gn-Kw-d2h.title" = "マイページ";
+
+/* Class = "IBUIViewController"; title = "First"; ObjectID = "CZ4-MO-1fc"; */
+"CZ4-MO-1fc.title" = "First";
+
+/* Class = "IBUIBarButtonItem"; title = "新規"; ObjectID = "MAm-o2-dd3"; */
+"MAm-o2-dd3.title" = "新規";
+
+/* Class = "IBUITabBarItem"; title = "スポットを作る"; ObjectID = "bUl-bp-Vgw"; */
+"bUl-bp-Vgw.title" = "スポットリストを作る";
+
+/* Class = "IBUIBarButtonItem"; title = "保存する"; ObjectID = "h42-IO-iWr"; */
+"h42-IO-iWr.title" = "保存する";
+
+/* Class = "IBUINavigationItem"; title = "作成したスポットリスト"; ObjectID = "rRB-yJ-xBg"; */
+"rRB-yJ-xBg.title" = "作成したスポットリスト";
+
+/* Class = "IBUISearchBar"; placeholder = "場所名を検索"; ObjectID = "rak-Do-a0S"; */
+"rak-Do-a0S.placeholder" = "場所名を検索";
+
+/* Class = "IBUILabel"; text = "行ってみたい場所を検索して、行きたい場所のリストを作ってみましょう!"; ObjectID = "umK-Tp-U6P"; */
+"umK-Tp-U6P.text" = "行ってみたい場所を検索して、行きたい場所のリストを作ってみましょう!";

@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6453A18C63B48AB88EC77D9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C96C0CAFF04B9791A7622C /* libPods.a */; };
+		E12D88EF18DE78AE00D0468A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88EE18DE78AE00D0468A /* Foundation.framework */; };
+		E12D88F118DE78AE00D0468A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88F018DE78AE00D0468A /* CoreGraphics.framework */; };
+		E12D88F318DE78AE00D0468A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88F218DE78AE00D0468A /* UIKit.framework */; };
+		E12D891118DE78AF00D0468A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D891018DE78AF00D0468A /* XCTest.framework */; };
+		E12D891218DE78AF00D0468A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88EE18DE78AE00D0468A /* Foundation.framework */; };
+		E12D891318DE78AF00D0468A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88F218DE78AE00D0468A /* UIKit.framework */; };
+		E12D892718DE81E400D0468A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D892618DE81E400D0468A /* MapKit.framework */; };
+		E1B38841196F91AE004F1A49 /* SpotLabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4483D196F6AE700BA868C /* SpotLabTests.m */; };
+		E1B38842196F926D004F1A49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D44839196F6AE700BA868C /* InfoPlist.strings */; };
+		E1D44827196F6ACF00BA868C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44807196F6ACF00BA868C /* AppDelegate.m */; };
+		E1D44828196F6ACF00BA868C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D44808196F6ACF00BA868C /* Main.storyboard */; };
+		E1D44829196F6ACF00BA868C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D4480A196F6ACF00BA868C /* InfoPlist.strings */; };
+		E1D4482A196F6ACF00BA868C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4480D196F6ACF00BA868C /* FirstViewController.m */; };
+		E1D4482B196F6ACF00BA868C /* HTAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4480F196F6ACF00BA868C /* HTAnnotation.m */; };
+		E1D4482C196F6ACF00BA868C /* HTArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44811196F6ACF00BA868C /* HTArrowView.m */; };
+		E1D4482D196F6ACF00BA868C /* HTIndicatorBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44813196F6ACF00BA868C /* HTIndicatorBlockView.m */; };
+		E1D4482E196F6ACF00BA868C /* HTNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44815196F6ACF00BA868C /* HTNotification.m */; };
+		E1D4482F196F6ACF00BA868C /* HTWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44817196F6ACF00BA868C /* HTWebView.m */; };
+		E1D44830196F6ACF00BA868C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D44818196F6ACF00BA868C /* Images.xcassets */; };
+		E1D44831196F6ACF00BA868C /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D4481A196F6ACF00BA868C /* Main.strings */; };
+		E1D44832196F6ACF00BA868C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4481C196F6ACF00BA868C /* main.m */; };
+		E1D44833196F6ACF00BA868C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4481E196F6ACF00BA868C /* SecondViewController.m */; };
+		E1D44834196F6ACF00BA868C /* SpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44820196F6ACF00BA868C /* SpotDetailViewController.m */; };
+		E1D44836196F6ACF00BA868C /* SpotsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44824196F6ACF00BA868C /* SpotsMapViewController.m */; };
+		E1D44837196F6ACF00BA868C /* URLCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44826196F6ACF00BA868C /* URLCodec.m */; };
+		E1D4483E196F6AE700BA868C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D44839196F6AE700BA868C /* InfoPlist.strings */; };
+		E1D4483F196F6AE700BA868C /* SpotLabTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1D4483C196F6AE700BA868C /* SpotLabTests-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E12D891418DE78AF00D0468A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E12D88E318DE78AE00D0468A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E12D88EA18DE78AE00D0468A;
+			remoteInfo = Memoris;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32C96C0CAFF04B9791A7622C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99FFC56789B428DBEF7DA51 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E12D88EB18DE78AE00D0468A /* SpotLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12D88EE18DE78AE00D0468A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E12D88F018DE78AE00D0468A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E12D88F218DE78AE00D0468A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E12D890F18DE78AF00D0468A /* SpotLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12D891018DE78AF00D0468A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E12D892618DE81E400D0468A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E1D44806196F6ACF00BA868C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1D44807196F6ACF00BA868C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E1D44809196F6ACF00BA868C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1D4480B196F6ACF00BA868C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1D4480C196F6ACF00BA868C /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		E1D4480D196F6ACF00BA868C /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		E1D4480E196F6ACF00BA868C /* HTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAnnotation.h; sourceTree = "<group>"; };
+		E1D4480F196F6ACF00BA868C /* HTAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAnnotation.m; sourceTree = "<group>"; };
+		E1D44810196F6ACF00BA868C /* HTArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTArrowView.h; sourceTree = "<group>"; };
+		E1D44811196F6ACF00BA868C /* HTArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTArrowView.m; sourceTree = "<group>"; };
+		E1D44812196F6ACF00BA868C /* HTIndicatorBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTIndicatorBlockView.h; sourceTree = "<group>"; };
+		E1D44813196F6ACF00BA868C /* HTIndicatorBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTIndicatorBlockView.m; sourceTree = "<group>"; };
+		E1D44814196F6ACF00BA868C /* HTNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTNotification.h; sourceTree = "<group>"; };
+		E1D44815196F6ACF00BA868C /* HTNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTNotification.m; sourceTree = "<group>"; };
+		E1D44816196F6ACF00BA868C /* HTWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTWebView.h; sourceTree = "<group>"; };
+		E1D44817196F6ACF00BA868C /* HTWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTWebView.m; sourceTree = "<group>"; };
+		E1D44818196F6ACF00BA868C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E1D44819196F6ACF00BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1D4481B196F6ACF00BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		E1D4481C196F6ACF00BA868C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1D4481D196F6ACF00BA868C /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		E1D4481E196F6ACF00BA868C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		E1D4481F196F6ACF00BA868C /* SpotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotDetailViewController.h; sourceTree = "<group>"; };
+		E1D44820196F6ACF00BA868C /* SpotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotDetailViewController.m; sourceTree = "<group>"; };
+		E1D44821196F6ACF00BA868C /* SpotLab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SpotLab-Info.plist"; sourceTree = "<group>"; };
+		E1D44822196F6ACF00BA868C /* SpotLab-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpotLab-Prefix.pch"; sourceTree = "<group>"; };
+		E1D44823196F6ACF00BA868C /* SpotsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotsMapViewController.h; sourceTree = "<group>"; };
+		E1D44824196F6ACF00BA868C /* SpotsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotsMapViewController.m; sourceTree = "<group>"; };
+		E1D44825196F6ACF00BA868C /* URLCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCodec.h; sourceTree = "<group>"; };
+		E1D44826196F6ACF00BA868C /* URLCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCodec.m; sourceTree = "<group>"; };
+		E1D4483A196F6AE700BA868C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1D4483B196F6AE700BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1D4483C196F6AE700BA868C /* SpotLabTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SpotLabTests-Info.plist"; sourceTree = "<group>"; };
+		E1D4483D196F6AE700BA868C /* SpotLabTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotLabTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E12D88E818DE78AE00D0468A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E12D892718DE81E400D0468A /* MapKit.framework in Frameworks */,
+				E12D88F118DE78AE00D0468A /* CoreGraphics.framework in Frameworks */,
+				E12D88F318DE78AE00D0468A /* UIKit.framework in Frameworks */,
+				E12D88EF18DE78AE00D0468A /* Foundation.framework in Frameworks */,
+				B6453A18C63B48AB88EC77D9 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E12D890C18DE78AF00D0468A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E12D891118DE78AF00D0468A /* XCTest.framework in Frameworks */,
+				E12D891318DE78AF00D0468A /* UIKit.framework in Frameworks */,
+				E12D891218DE78AF00D0468A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E12D88E218DE78AE00D0468A = {
+			isa = PBXGroup;
+			children = (
+				E1D44805196F6ACF00BA868C /* SpotLab */,
+				E1D44838196F6AE700BA868C /* SpotLabTests */,
+				E12D88ED18DE78AE00D0468A /* Frameworks */,
+				E12D88EC18DE78AE00D0468A /* Products */,
+				D99FFC56789B428DBEF7DA51 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		E12D88EC18DE78AE00D0468A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E12D88EB18DE78AE00D0468A /* SpotLab.app */,
+				E12D890F18DE78AF00D0468A /* SpotLabTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E12D88ED18DE78AE00D0468A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E12D892618DE81E400D0468A /* MapKit.framework */,
+				E12D88EE18DE78AE00D0468A /* Foundation.framework */,
+				E12D88F018DE78AE00D0468A /* CoreGraphics.framework */,
+				E12D88F218DE78AE00D0468A /* UIKit.framework */,
+				E12D891018DE78AF00D0468A /* XCTest.framework */,
+				32C96C0CAFF04B9791A7622C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1383AA6196F9F3E0080E610 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1D44821196F6ACF00BA868C /* SpotLab-Info.plist */,
+				E1D4480A196F6ACF00BA868C /* InfoPlist.strings */,
+				E1D4481C196F6ACF00BA868C /* main.m */,
+				E1D44822196F6ACF00BA868C /* SpotLab-Prefix.pch */,
+				E1D4481A196F6ACF00BA868C /* Main.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1383AA7196FA00B0080E610 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E1D44825196F6ACF00BA868C /* URLCodec.h */,
+				E1D44826196F6ACF00BA868C /* URLCodec.m */,
+				E1D4480E196F6ACF00BA868C /* HTAnnotation.h */,
+				E1D4480F196F6ACF00BA868C /* HTAnnotation.m */,
+				E1D44810196F6ACF00BA868C /* HTArrowView.h */,
+				E1D44811196F6ACF00BA868C /* HTArrowView.m */,
+				E1D44812196F6ACF00BA868C /* HTIndicatorBlockView.h */,
+				E1D44813196F6ACF00BA868C /* HTIndicatorBlockView.m */,
+				E1D44814196F6ACF00BA868C /* HTNotification.h */,
+				E1D44815196F6ACF00BA868C /* HTNotification.m */,
+				E1D44816196F6ACF00BA868C /* HTWebView.h */,
+				E1D44817196F6ACF00BA868C /* HTWebView.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		E1B38840196F8932004F1A49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1D44839196F6AE700BA868C /* InfoPlist.strings */,
+				E1D4483C196F6AE700BA868C /* SpotLabTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1D44805196F6ACF00BA868C /* SpotLab */ = {
+			isa = PBXGroup;
+			children = (
+				E1D44806196F6ACF00BA868C /* AppDelegate.h */,
+				E1D44807196F6ACF00BA868C /* AppDelegate.m */,
+				E1D44808196F6ACF00BA868C /* Main.storyboard */,
+				E1D4480C196F6ACF00BA868C /* FirstViewController.h */,
+				E1D4480D196F6ACF00BA868C /* FirstViewController.m */,
+				E1D4481D196F6ACF00BA868C /* SecondViewController.h */,
+				E1D4481E196F6ACF00BA868C /* SecondViewController.m */,
+				E1D4481F196F6ACF00BA868C /* SpotDetailViewController.h */,
+				E1D44820196F6ACF00BA868C /* SpotDetailViewController.m */,
+				E1D44823196F6ACF00BA868C /* SpotsMapViewController.h */,
+				E1D44824196F6ACF00BA868C /* SpotsMapViewController.m */,
+				E1383AA7196FA00B0080E610 /* Utils */,
+				E1D44818196F6ACF00BA868C /* Images.xcassets */,
+				E1383AA6196F9F3E0080E610 /* Supporting Files */,
+			);
+			path = SpotLab;
+			sourceTree = "<group>";
+		};
+		E1D44838196F6AE700BA868C /* SpotLabTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1B38840196F8932004F1A49 /* Supporting Files */,
+				E1D4483D196F6AE700BA868C /* SpotLabTests.m */,
+			);
+			path = SpotLabTests;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E12D88EA18DE78AE00D0468A /* SpotLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E12D892018DE78AF00D0468A /* Build configuration list for PBXNativeTarget "SpotLab" */;
+			buildPhases = (
+				A12BA19A29D640CC9091DA3A /* Check Pods Manifest.lock */,
+				E12D88E718DE78AE00D0468A /* Sources */,
+				E12D88E818DE78AE00D0468A /* Frameworks */,
+				E12D88E918DE78AE00D0468A /* Resources */,
+				E5C3247F76004D8EB24003CE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpotLab;
+			productName = Memoris;
+			productReference = E12D88EB18DE78AE00D0468A /* SpotLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E12D890E18DE78AF00D0468A /* SpotLabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E12D892318DE78AF00D0468A /* Build configuration list for PBXNativeTarget "SpotLabTests" */;
+			buildPhases = (
+				E12D890B18DE78AF00D0468A /* Sources */,
+				E12D890C18DE78AF00D0468A /* Frameworks */,
+				E12D890D18DE78AF00D0468A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E12D891518DE78AF00D0468A /* PBXTargetDependency */,
+			);
+			name = SpotLabTests;
+			productName = MemorisTests;
+			productReference = E12D890F18DE78AF00D0468A /* SpotLabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E12D88E318DE78AE00D0468A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "高橋 弘";
+				TargetAttributes = {
+					E12D890E18DE78AF00D0468A = {
+						TestTargetID = E12D88EA18DE78AE00D0468A;
+					};
+				};
+			};
+			buildConfigurationList = E12D88E618DE78AE00D0468A /* Build configuration list for PBXProject "SpotLab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ja,
+			);
+			mainGroup = E12D88E218DE78AE00D0468A;
+			productRefGroup = E12D88EC18DE78AE00D0468A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E12D88EA18DE78AE00D0468A /* SpotLab */,
+				E12D890E18DE78AF00D0468A /* SpotLabTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E12D88E918DE78AE00D0468A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1D44830196F6ACF00BA868C /* Images.xcassets in Resources */,
+				E1D4483E196F6AE700BA868C /* InfoPlist.strings in Resources */,
+				E1D4483F196F6AE700BA868C /* SpotLabTests-Info.plist in Resources */,
+				E1D44831196F6ACF00BA868C /* Main.strings in Resources */,
+				E1D44828196F6ACF00BA868C /* Main.storyboard in Resources */,
+				E1D44829196F6ACF00BA868C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E12D890D18DE78AF00D0468A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1B38842196F926D004F1A49 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A12BA19A29D640CC9091DA3A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C3247F76004D8EB24003CE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E12D88E718DE78AE00D0468A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1D44833196F6ACF00BA868C /* SecondViewController.m in Sources */,
+				E1D4482E196F6ACF00BA868C /* HTNotification.m in Sources */,
+				E1D44837196F6ACF00BA868C /* URLCodec.m in Sources */,
+				E1D4482F196F6ACF00BA868C /* HTWebView.m in Sources */,
+				E1D44834196F6ACF00BA868C /* SpotDetailViewController.m in Sources */,
+				E1D44827196F6ACF00BA868C /* AppDelegate.m in Sources */,
+				E1D4482B196F6ACF00BA868C /* HTAnnotation.m in Sources */,
+				E1D4482C196F6ACF00BA868C /* HTArrowView.m in Sources */,
+				E1D4482A196F6ACF00BA868C /* FirstViewController.m in Sources */,
+				E1D44832196F6ACF00BA868C /* main.m in Sources */,
+				E1D4482D196F6ACF00BA868C /* HTIndicatorBlockView.m in Sources */,
+				E1D44836196F6ACF00BA868C /* SpotsMapViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E12D890B18DE78AF00D0468A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1B38841196F91AE004F1A49 /* SpotLabTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E12D891518DE78AF00D0468A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E12D88EA18DE78AE00D0468A /* SpotLab */;
+			targetProxy = E12D891418DE78AF00D0468A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E1D44808196F6ACF00BA868C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1D44809196F6ACF00BA868C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E1D4480A196F6ACF00BA868C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1D4480B196F6ACF00BA868C /* en */,
+				E1D44819196F6ACF00BA868C /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E1D4481A196F6ACF00BA868C /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1D4481B196F6ACF00BA868C /* ja */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
+		E1D44839196F6AE700BA868C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1D4483A196F6AE700BA868C /* en */,
+				E1D4483B196F6AE700BA868C /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E12D891E18DE78AF00D0468A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E12D891F18DE78AF00D0468A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E12D892118DE78AF00D0468A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99FFC56789B428DBEF7DA51 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpotLab/SpotLab-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/SpotLab/SpotLab-Info.plist";
+				PRODUCT_NAME = SpotLab;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E12D892218DE78AF00D0468A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99FFC56789B428DBEF7DA51 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpotLab/SpotLab-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/SpotLab/SpotLab-Info.plist";
+				PRODUCT_NAME = SpotLab;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E12D892418DE78AF00D0468A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99FFC56789B428DBEF7DA51 /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpotLab.app/SpotLab";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpotLab/SpotLab-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "SpotLabTests/SpotLabTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+				);
+				PRODUCT_NAME = SpotLabTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E12D892518DE78AF00D0468A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpotLab.app/SpotLab";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpotLab/SpotLab-Prefix.pch";
+				INFOPLIST_FILE = "SpotLabTests/SpotLabTests-Info.plist";
+				PRODUCT_NAME = SpotLabTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E12D88E618DE78AE00D0468A /* Build configuration list for PBXProject "SpotLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E12D891E18DE78AF00D0468A /* Debug */,
+				E12D891F18DE78AF00D0468A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E12D892018DE78AF00D0468A /* Build configuration list for PBXNativeTarget "SpotLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E12D892118DE78AF00D0468A /* Debug */,
+				E12D892218DE78AF00D0468A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E12D892318DE78AF00D0468A /* Build configuration list for PBXNativeTarget "SpotLabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E12D892418DE78AF00D0468A /* Debug */,
+				E12D892518DE78AF00D0468A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E12D88E318DE78AE00D0468A /* Project object */;
+}

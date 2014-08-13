@@ -45,7 +45,7 @@
     
     // デバッグモードの有無。YESにすると起動の度に表示される。(デフォルト:NO)
     #ifdef DEBUG
-    [Appirater setDebug: YES];
+    //[Appirater setDebug: YES];
     #endif
     
     [Appirater appLaunched:YES];

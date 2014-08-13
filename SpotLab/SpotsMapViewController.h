@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface SpotsMapViewController : UIViewController <MKMapViewDelegate>
+@interface SpotsMapViewController : UIViewController
+<MKMapViewDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) NSMutableArray *venueArray;
 

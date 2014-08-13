@@ -105,6 +105,7 @@
 
     SpotsMapViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SpotsMapScene"];
     vc.venueArray = venueArray;
+    vc.title = [listDict objectForKey:@"title"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

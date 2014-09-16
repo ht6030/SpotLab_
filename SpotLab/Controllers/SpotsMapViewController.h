@@ -10,8 +10,8 @@
 #import <MapKit/MapKit.h>
 
 @interface SpotsMapViewController : UIViewController
-<MKMapViewDelegate, UIActionSheetDelegate>
+<MKMapViewDelegate, UITableViewDelegate,UITableViewDataSource, UIActionSheetDelegate, UISearchBarDelegate>
 
-@property (weak, nonatomic) NSMutableArray *venueArray;
+@property (weak, nonatomic) NSMutableArray *selectedVenueArray;
 
 @end

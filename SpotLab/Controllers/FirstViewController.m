@@ -14,6 +14,7 @@
 #import "HTNotification.h"
 #import "HTIndicatorBlockView.h"
 #import "SpotDetailViewController.h"
+#import "SpotsModel.h"
 
 @interface FirstViewController ()
 //@property (weak, nonatomic) IBOutlet UIBarButtonItem *newBtn;
@@ -57,6 +58,37 @@
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
     [_locationManager startUpdatingLocation];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getSpotsDone:) name:NOTIF_SpotsModel_GetSpots object:nil];
+    NSLog(@"%s",__func__);
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIF_SpotsModel_GetSpots object:nil];
+    NSLog(@"%s",__func__);
+}
+
+- (void)getSpotsDone:(NSNotification *)notification
+{
+    [_venueArray removeAllObjects];
+    NSArray *venuesArray = [[notification.userInfo objectForKey:@"response"] objectForKey:@"venues"];
+    NSLog(@"venuesArray.count = %lu",(unsigned long)venuesArray.count);
+    for (int i=0; i<venuesArray.count; i++) {
+        NSDictionary *venue = [venuesArray objectAtIndex:i];
+        NSString *venueName = [venue objectForKey:@"name"];
+        NSLog(@"venueName = %@",venueName);
+        [_venueArray addObject:venue];
+    }
+    
+    _blockView.hidden = YES;
+    _tableView.hidden = NO;
+    [_tableView reloadData];
 }
 
 
@@ -339,9 +371,7 @@
                 return;
             }
         }
-        
     }
-    
 }
 
 
@@ -379,57 +409,10 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [_searchBar resignFirstResponder];
-    
     _blockView.hidden = NO;
     
-    //NSString *urlStr = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=35.73707,139.760068&query=%@", FS_CLIENT_ID, FS_CLIENT_SECRET, [URLCodec encode:_searchBar.text]];
-    NSString *urlStr = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@", FS_CLIENT_ID, FS_CLIENT_SECRET, _coordinate.latitude, _coordinate.longitude,[URLCodec encode:_searchBar.text]];
-    
-    
-    __weak typeof(self) wself = self;
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        
-        //id obj1 = [responseObject objectForKey:@"response"];
-        //NSLog(@"obj1_class:%@",[[obj1 class] description]);
-        //NSLog(@"obj2: %@", [obj1 objectForKey:@"venues"]);
-        
-        [wself.venueArray removeAllObjects];
-        
-        NSArray *venuesArray = [[responseObject objectForKey:@"response"] objectForKey:@"venues"];
-        //NSLog(@"venuesArray.count = %lu",(unsigned long)venuesArray.count);
-        for (int i=0; i<venuesArray.count; i++) {
-            NSDictionary *venue = [venuesArray objectAtIndex:i];
-            //NSString *venueName = [venue objectForKey:@"name"];
-            //NSLog(@"venueName = %@",venueName);
-            [wself.venueArray addObject:venue];
-        }
-        
-        wself.blockView.hidden = YES;
-        wself.tableView.hidden = NO;
-        [wself.tableView reloadData];
-        
-        // 検索結果として、地図にピンを立てるとともに、テーブルビューで表示する。
-        
-        //NSLog(@"venuesArray_class:%@",[[venuesArray class] description]);
-        
-        //NSLog(@"obj3: %@", [[obj1 objectForKey:@"venues"] objectAtIndex:0]);
-        //NSLog(@"obj1: %@", obj1);
-        //NSLog(@"obj2: %@", [obj1 objectAtIndex:0]);
-        
-        //id obj2 = [responseObject objectForKey:@"venues"];
-        //NSLog(@"obj2: %@", [obj1 objectAtIndex:0]);
-        //NSLog(@"obj3: %@",[obj2 objectAtIndex:0]);
-
-        //NSArray *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        //NSLog(@"jsonObject.count = %ld",jsonObject.count);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    return;
+    SpotsModel *spotsModel = [[SpotsModel alloc] init];
+    [spotsModel getSpotsListWithQuery:[URLCodec encode:_searchBar.text] location:_coordinate];
 }
 
 
@@ -519,6 +502,55 @@
 }
 
 @end
+
+/*
+NSString *urlStr = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@", FS_CLIENT_ID, FS_CLIENT_SECRET, _coordinate.latitude, _coordinate.longitude,[URLCodec encode:_searchBar.text]];
+
+__weak typeof(self) wself = self;
+AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+[manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSLog(@"JSON: %@", responseObject);
+    
+    //id obj1 = [responseObject objectForKey:@"response"];
+    //NSLog(@"obj1_class:%@",[[obj1 class] description]);
+    //NSLog(@"obj2: %@", [obj1 objectForKey:@"venues"]);
+    
+    [wself.venueArray removeAllObjects];
+    
+    NSArray *venuesArray = [[responseObject objectForKey:@"response"] objectForKey:@"venues"];
+    //NSLog(@"venuesArray.count = %lu",(unsigned long)venuesArray.count);
+    for (int i=0; i<venuesArray.count; i++) {
+        NSDictionary *venue = [venuesArray objectAtIndex:i];
+        //NSString *venueName = [venue objectForKey:@"name"];
+        //NSLog(@"venueName = %@",venueName);
+        [wself.venueArray addObject:venue];
+    }
+    
+    wself.blockView.hidden = YES;
+    wself.tableView.hidden = NO;
+    [wself.tableView reloadData];
+    
+    // 検索結果として、地図にピンを立てるとともに、テーブルビューで表示する。
+    
+    //NSLog(@"venuesArray_class:%@",[[venuesArray class] description]);
+    
+    //NSLog(@"obj3: %@", [[obj1 objectForKey:@"venues"] objectAtIndex:0]);
+    //NSLog(@"obj1: %@", obj1);
+    //NSLog(@"obj2: %@", [obj1 objectAtIndex:0]);
+    
+    //id obj2 = [responseObject objectForKey:@"venues"];
+    //NSLog(@"obj2: %@", [obj1 objectAtIndex:0]);
+    //NSLog(@"obj3: %@",[obj2 objectAtIndex:0]);
+    
+    //NSArray *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+    //NSLog(@"jsonObject.count = %ld",jsonObject.count);
+    
+} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"Error: %@", error);
+}];
+
+return;
+*/
 
 
 

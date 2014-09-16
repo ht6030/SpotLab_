@@ -104,7 +104,7 @@
     //[self performSegueWithIdentifier:@"showSpotsDetail" sender:self];
 
     SpotsMapViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SpotsMapScene"];
-    vc.venueArray = venueArray;
+    vc.selectedVenueArray = venueArray;
     vc.title = [listDict objectForKey:@"title"];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -169,7 +169,7 @@
         
         NSDictionary *listDict = [_storedArray objectAtIndex:0];
         NSMutableArray *venueArray = [listDict objectForKey:@"venues"];
-        vc.venueArray = venueArray;
+        vc.selectedVenueArray = venueArray;
     }
     
     // Get the new view controller using [segue destinationViewController].

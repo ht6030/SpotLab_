@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B6453A18C63B48AB88EC77D9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C96C0CAFF04B9791A7622C /* libPods.a */; };
+		E10E336419C900F800415D65 /* HTAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335919C900F800415D65 /* HTAnnotation.m */; };
+		E10E336519C900F800415D65 /* HTArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335B19C900F800415D65 /* HTArrowView.m */; };
+		E10E336619C900F800415D65 /* HTIndicatorBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335D19C900F800415D65 /* HTIndicatorBlockView.m */; };
+		E10E336719C900F800415D65 /* HTNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335F19C900F800415D65 /* HTNotification.m */; };
+		E10E336819C900F800415D65 /* HTWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336119C900F800415D65 /* HTWebView.m */; };
+		E10E336919C900F800415D65 /* URLCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336319C900F800415D65 /* URLCodec.m */; };
+		E10E336C19C9011000415D65 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336B19C9011000415D65 /* DataManager.m */; };
+		E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336E19C9011E00415D65 /* SpotsModel.m */; };
+		E10E337319C9015B00415D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10E337119C9015B00415D65 /* Main.storyboard */; };
+		E10E337D19C9019100415D65 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337619C9019100415D65 /* FirstViewController.m */; };
+		E10E337E19C9019100415D65 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337819C9019100415D65 /* SecondViewController.m */; };
+		E10E337F19C9019100415D65 /* SpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337A19C9019100415D65 /* SpotDetailViewController.m */; };
+		E10E338019C9019100415D65 /* SpotsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337C19C9019100415D65 /* SpotsMapViewController.m */; };
 		E12D88EF18DE78AE00D0468A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88EE18DE78AE00D0468A /* Foundation.framework */; };
 		E12D88F118DE78AE00D0468A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88F018DE78AE00D0468A /* CoreGraphics.framework */; };
 		E12D88F318DE78AE00D0468A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88F218DE78AE00D0468A /* UIKit.framework */; };
@@ -18,21 +31,10 @@
 		E1B38841196F91AE004F1A49 /* SpotLabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4483D196F6AE700BA868C /* SpotLabTests.m */; };
 		E1B38842196F926D004F1A49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D44839196F6AE700BA868C /* InfoPlist.strings */; };
 		E1D44827196F6ACF00BA868C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44807196F6ACF00BA868C /* AppDelegate.m */; };
-		E1D44828196F6ACF00BA868C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D44808196F6ACF00BA868C /* Main.storyboard */; };
 		E1D44829196F6ACF00BA868C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D4480A196F6ACF00BA868C /* InfoPlist.strings */; };
-		E1D4482A196F6ACF00BA868C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4480D196F6ACF00BA868C /* FirstViewController.m */; };
-		E1D4482B196F6ACF00BA868C /* HTAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4480F196F6ACF00BA868C /* HTAnnotation.m */; };
-		E1D4482C196F6ACF00BA868C /* HTArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44811196F6ACF00BA868C /* HTArrowView.m */; };
-		E1D4482D196F6ACF00BA868C /* HTIndicatorBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44813196F6ACF00BA868C /* HTIndicatorBlockView.m */; };
-		E1D4482E196F6ACF00BA868C /* HTNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44815196F6ACF00BA868C /* HTNotification.m */; };
-		E1D4482F196F6ACF00BA868C /* HTWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44817196F6ACF00BA868C /* HTWebView.m */; };
 		E1D44830196F6ACF00BA868C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D44818196F6ACF00BA868C /* Images.xcassets */; };
 		E1D44831196F6ACF00BA868C /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D4481A196F6ACF00BA868C /* Main.strings */; };
 		E1D44832196F6ACF00BA868C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4481C196F6ACF00BA868C /* main.m */; };
-		E1D44833196F6ACF00BA868C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4481E196F6ACF00BA868C /* SecondViewController.m */; };
-		E1D44834196F6ACF00BA868C /* SpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44820196F6ACF00BA868C /* SpotDetailViewController.m */; };
-		E1D44836196F6ACF00BA868C /* SpotsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44824196F6ACF00BA868C /* SpotsMapViewController.m */; };
-		E1D44837196F6ACF00BA868C /* URLCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44826196F6ACF00BA868C /* URLCodec.m */; };
 		E1D4483E196F6AE700BA868C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D44839196F6AE700BA868C /* InfoPlist.strings */; };
 		E1D4483F196F6AE700BA868C /* SpotLabTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1D4483C196F6AE700BA868C /* SpotLabTests-Info.plist */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,31 @@
 /* Begin PBXFileReference section */
 		32C96C0CAFF04B9791A7622C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99FFC56789B428DBEF7DA51 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E10E335819C900F800415D65 /* HTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTAnnotation.h; path = Utils/HTAnnotation.h; sourceTree = "<group>"; };
+		E10E335919C900F800415D65 /* HTAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTAnnotation.m; path = Utils/HTAnnotation.m; sourceTree = "<group>"; };
+		E10E335A19C900F800415D65 /* HTArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTArrowView.h; path = Utils/HTArrowView.h; sourceTree = "<group>"; };
+		E10E335B19C900F800415D65 /* HTArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTArrowView.m; path = Utils/HTArrowView.m; sourceTree = "<group>"; };
+		E10E335C19C900F800415D65 /* HTIndicatorBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTIndicatorBlockView.h; path = Utils/HTIndicatorBlockView.h; sourceTree = "<group>"; };
+		E10E335D19C900F800415D65 /* HTIndicatorBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTIndicatorBlockView.m; path = Utils/HTIndicatorBlockView.m; sourceTree = "<group>"; };
+		E10E335E19C900F800415D65 /* HTNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTNotification.h; path = Utils/HTNotification.h; sourceTree = "<group>"; };
+		E10E335F19C900F800415D65 /* HTNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTNotification.m; path = Utils/HTNotification.m; sourceTree = "<group>"; };
+		E10E336019C900F800415D65 /* HTWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTWebView.h; path = Utils/HTWebView.h; sourceTree = "<group>"; };
+		E10E336119C900F800415D65 /* HTWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTWebView.m; path = Utils/HTWebView.m; sourceTree = "<group>"; };
+		E10E336219C900F800415D65 /* URLCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLCodec.h; path = Utils/URLCodec.h; sourceTree = "<group>"; };
+		E10E336319C900F800415D65 /* URLCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLCodec.m; path = Utils/URLCodec.m; sourceTree = "<group>"; };
+		E10E336A19C9011000415D65 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Models/DataManager/DataManager.h; sourceTree = "<group>"; };
+		E10E336B19C9011000415D65 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Models/DataManager/DataManager.m; sourceTree = "<group>"; };
+		E10E336D19C9011E00415D65 /* SpotsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotsModel.h; path = Models/SpotsModel.h; sourceTree = "<group>"; };
+		E10E336E19C9011E00415D65 /* SpotsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotsModel.m; path = Models/SpotsModel.m; sourceTree = "<group>"; };
+		E10E337219C9015B00415D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SpotLab/Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E10E337519C9019000415D65 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = Controllers/FirstViewController.h; sourceTree = "<group>"; };
+		E10E337619C9019100415D65 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = Controllers/FirstViewController.m; sourceTree = "<group>"; };
+		E10E337719C9019100415D65 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = Controllers/SecondViewController.h; sourceTree = "<group>"; };
+		E10E337819C9019100415D65 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = Controllers/SecondViewController.m; sourceTree = "<group>"; };
+		E10E337919C9019100415D65 /* SpotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotDetailViewController.h; path = Controllers/SpotDetailViewController.h; sourceTree = "<group>"; };
+		E10E337A19C9019100415D65 /* SpotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotDetailViewController.m; path = Controllers/SpotDetailViewController.m; sourceTree = "<group>"; };
+		E10E337B19C9019100415D65 /* SpotsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotsMapViewController.h; path = Controllers/SpotsMapViewController.h; sourceTree = "<group>"; };
+		E10E337C19C9019100415D65 /* SpotsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotsMapViewController.m; path = Controllers/SpotsMapViewController.m; sourceTree = "<group>"; };
 		E12D88EB18DE78AE00D0468A /* SpotLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12D88EE18DE78AE00D0468A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E12D88F018DE78AE00D0468A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,34 +86,13 @@
 		E12D892618DE81E400D0468A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E1D44806196F6ACF00BA868C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1D44807196F6ACF00BA868C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E1D44809196F6ACF00BA868C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1D4480B196F6ACF00BA868C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E1D4480C196F6ACF00BA868C /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		E1D4480D196F6ACF00BA868C /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		E1D4480E196F6ACF00BA868C /* HTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAnnotation.h; sourceTree = "<group>"; };
-		E1D4480F196F6ACF00BA868C /* HTAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAnnotation.m; sourceTree = "<group>"; };
-		E1D44810196F6ACF00BA868C /* HTArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTArrowView.h; sourceTree = "<group>"; };
-		E1D44811196F6ACF00BA868C /* HTArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTArrowView.m; sourceTree = "<group>"; };
-		E1D44812196F6ACF00BA868C /* HTIndicatorBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTIndicatorBlockView.h; sourceTree = "<group>"; };
-		E1D44813196F6ACF00BA868C /* HTIndicatorBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTIndicatorBlockView.m; sourceTree = "<group>"; };
-		E1D44814196F6ACF00BA868C /* HTNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTNotification.h; sourceTree = "<group>"; };
-		E1D44815196F6ACF00BA868C /* HTNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTNotification.m; sourceTree = "<group>"; };
-		E1D44816196F6ACF00BA868C /* HTWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTWebView.h; sourceTree = "<group>"; };
-		E1D44817196F6ACF00BA868C /* HTWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTWebView.m; sourceTree = "<group>"; };
 		E1D44818196F6ACF00BA868C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1D44819196F6ACF00BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1D4481B196F6ACF00BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		E1D4481C196F6ACF00BA868C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E1D4481D196F6ACF00BA868C /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		E1D4481E196F6ACF00BA868C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		E1D4481F196F6ACF00BA868C /* SpotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotDetailViewController.h; sourceTree = "<group>"; };
-		E1D44820196F6ACF00BA868C /* SpotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotDetailViewController.m; sourceTree = "<group>"; };
 		E1D44821196F6ACF00BA868C /* SpotLab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SpotLab-Info.plist"; sourceTree = "<group>"; };
 		E1D44822196F6ACF00BA868C /* SpotLab-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpotLab-Prefix.pch"; sourceTree = "<group>"; };
-		E1D44823196F6ACF00BA868C /* SpotsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotsMapViewController.h; sourceTree = "<group>"; };
-		E1D44824196F6ACF00BA868C /* SpotsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotsMapViewController.m; sourceTree = "<group>"; };
-		E1D44825196F6ACF00BA868C /* URLCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCodec.h; sourceTree = "<group>"; };
-		E1D44826196F6ACF00BA868C /* URLCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCodec.m; sourceTree = "<group>"; };
 		E1D4483A196F6AE700BA868C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1D4483B196F6AE700BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1D4483C196F6AE700BA868C /* SpotLabTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SpotLabTests-Info.plist"; sourceTree = "<group>"; };
@@ -119,6 +125,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E10E337019C9013E00415D65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E10E337119C9015B00415D65 /* Main.storyboard */,
+			);
+			name = Views;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E10E337419C9017E00415D65 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E10E337519C9019000415D65 /* FirstViewController.h */,
+				E10E337619C9019100415D65 /* FirstViewController.m */,
+				E10E337719C9019100415D65 /* SecondViewController.h */,
+				E10E337819C9019100415D65 /* SecondViewController.m */,
+				E10E337919C9019100415D65 /* SpotDetailViewController.h */,
+				E10E337A19C9019100415D65 /* SpotDetailViewController.m */,
+				E10E337B19C9019100415D65 /* SpotsMapViewController.h */,
+				E10E337C19C9019100415D65 /* SpotsMapViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		E12D88E218DE78AE00D0468A = {
 			isa = PBXGroup;
 			children = (
@@ -167,20 +197,39 @@
 		E1383AA7196FA00B0080E610 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E1D44825196F6ACF00BA868C /* URLCodec.h */,
-				E1D44826196F6ACF00BA868C /* URLCodec.m */,
-				E1D4480E196F6ACF00BA868C /* HTAnnotation.h */,
-				E1D4480F196F6ACF00BA868C /* HTAnnotation.m */,
-				E1D44810196F6ACF00BA868C /* HTArrowView.h */,
-				E1D44811196F6ACF00BA868C /* HTArrowView.m */,
-				E1D44812196F6ACF00BA868C /* HTIndicatorBlockView.h */,
-				E1D44813196F6ACF00BA868C /* HTIndicatorBlockView.m */,
-				E1D44814196F6ACF00BA868C /* HTNotification.h */,
-				E1D44815196F6ACF00BA868C /* HTNotification.m */,
-				E1D44816196F6ACF00BA868C /* HTWebView.h */,
-				E1D44817196F6ACF00BA868C /* HTWebView.m */,
+				E10E335819C900F800415D65 /* HTAnnotation.h */,
+				E10E335919C900F800415D65 /* HTAnnotation.m */,
+				E10E335A19C900F800415D65 /* HTArrowView.h */,
+				E10E335B19C900F800415D65 /* HTArrowView.m */,
+				E10E335C19C900F800415D65 /* HTIndicatorBlockView.h */,
+				E10E335D19C900F800415D65 /* HTIndicatorBlockView.m */,
+				E10E335E19C900F800415D65 /* HTNotification.h */,
+				E10E335F19C900F800415D65 /* HTNotification.m */,
+				E10E336019C900F800415D65 /* HTWebView.h */,
+				E10E336119C900F800415D65 /* HTWebView.m */,
+				E10E336219C900F800415D65 /* URLCodec.h */,
+				E10E336319C900F800415D65 /* URLCodec.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		E18AB17819C28133001F440E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E18AB17C19C281B4001F440E /* DataManager */,
+				E10E336D19C9011E00415D65 /* SpotsModel.h */,
+				E10E336E19C9011E00415D65 /* SpotsModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E18AB17C19C281B4001F440E /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				E10E336A19C9011000415D65 /* DataManager.h */,
+				E10E336B19C9011000415D65 /* DataManager.m */,
+			);
+			name = DataManager;
 			sourceTree = "<group>";
 		};
 		E1B38840196F8932004F1A49 /* Supporting Files */ = {
@@ -197,15 +246,9 @@
 			children = (
 				E1D44806196F6ACF00BA868C /* AppDelegate.h */,
 				E1D44807196F6ACF00BA868C /* AppDelegate.m */,
-				E1D44808196F6ACF00BA868C /* Main.storyboard */,
-				E1D4480C196F6ACF00BA868C /* FirstViewController.h */,
-				E1D4480D196F6ACF00BA868C /* FirstViewController.m */,
-				E1D4481D196F6ACF00BA868C /* SecondViewController.h */,
-				E1D4481E196F6ACF00BA868C /* SecondViewController.m */,
-				E1D4481F196F6ACF00BA868C /* SpotDetailViewController.h */,
-				E1D44820196F6ACF00BA868C /* SpotDetailViewController.m */,
-				E1D44823196F6ACF00BA868C /* SpotsMapViewController.h */,
-				E1D44824196F6ACF00BA868C /* SpotsMapViewController.m */,
+				E18AB17819C28133001F440E /* Models */,
+				E10E337019C9013E00415D65 /* Views */,
+				E10E337419C9017E00415D65 /* Controllers */,
 				E1383AA7196FA00B0080E610 /* Utils */,
 				E1D44818196F6ACF00BA868C /* Images.xcassets */,
 				E1383AA6196F9F3E0080E610 /* Supporting Files */,
@@ -304,8 +347,8 @@
 				E1D44830196F6ACF00BA868C /* Images.xcassets in Resources */,
 				E1D4483E196F6AE700BA868C /* InfoPlist.strings in Resources */,
 				E1D4483F196F6AE700BA868C /* SpotLabTests-Info.plist in Resources */,
+				E10E337319C9015B00415D65 /* Main.storyboard in Resources */,
 				E1D44831196F6ACF00BA868C /* Main.strings in Resources */,
-				E1D44828196F6ACF00BA868C /* Main.storyboard in Resources */,
 				E1D44829196F6ACF00BA868C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,18 +401,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1D44833196F6ACF00BA868C /* SecondViewController.m in Sources */,
-				E1D4482E196F6ACF00BA868C /* HTNotification.m in Sources */,
-				E1D44837196F6ACF00BA868C /* URLCodec.m in Sources */,
-				E1D4482F196F6ACF00BA868C /* HTWebView.m in Sources */,
-				E1D44834196F6ACF00BA868C /* SpotDetailViewController.m in Sources */,
+				E10E337F19C9019100415D65 /* SpotDetailViewController.m in Sources */,
+				E10E338019C9019100415D65 /* SpotsMapViewController.m in Sources */,
+				E10E337E19C9019100415D65 /* SecondViewController.m in Sources */,
+				E10E337D19C9019100415D65 /* FirstViewController.m in Sources */,
+				E10E336C19C9011000415D65 /* DataManager.m in Sources */,
 				E1D44827196F6ACF00BA868C /* AppDelegate.m in Sources */,
-				E1D4482B196F6ACF00BA868C /* HTAnnotation.m in Sources */,
-				E1D4482C196F6ACF00BA868C /* HTArrowView.m in Sources */,
-				E1D4482A196F6ACF00BA868C /* FirstViewController.m in Sources */,
+				E10E336519C900F800415D65 /* HTArrowView.m in Sources */,
+				E10E336419C900F800415D65 /* HTAnnotation.m in Sources */,
+				E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */,
+				E10E336719C900F800415D65 /* HTNotification.m in Sources */,
+				E10E336919C900F800415D65 /* URLCodec.m in Sources */,
+				E10E336619C900F800415D65 /* HTIndicatorBlockView.m in Sources */,
 				E1D44832196F6ACF00BA868C /* main.m in Sources */,
-				E1D4482D196F6ACF00BA868C /* HTIndicatorBlockView.m in Sources */,
-				E1D44836196F6ACF00BA868C /* SpotsMapViewController.m in Sources */,
+				E10E336819C900F800415D65 /* HTWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,10 +437,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E1D44808196F6ACF00BA868C /* Main.storyboard */ = {
+		E10E337119C9015B00415D65 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E1D44809196F6ACF00BA868C /* Base */,
+				E10E337219C9015B00415D65 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

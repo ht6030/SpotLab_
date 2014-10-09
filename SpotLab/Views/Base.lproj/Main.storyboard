@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -191,8 +190,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="blockView" destination="Dyk-ww-X97" id="fiJ-dJ-JHj"/>
                         <outlet property="editButton" destination="qhl-zU-OGb" id="gD9-8j-qgp"/>
-                        <outlet property="indicatorView" destination="Dyk-ww-X97" id="uSE-86-b7q"/>
                         <outlet property="mapView" destination="bEO-CG-wIZ" id="Ibl-Gx-JgH"/>
                         <outlet property="searchBar" destination="BS5-be-ftX" id="FC7-lW-f73"/>
                         <outlet property="tableView" destination="Yea-J7-A0E" id="B2b-dr-OkS"/>

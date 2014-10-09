@@ -31,6 +31,7 @@
 @property (strong, nonatomic) NSMutableArray *venueArray;
 @property (strong, nonatomic) NSMutableArray *selectedVenueArray;
 @property (nonatomic) NSInteger nowSelectedIndex;
+@property (nonatomic) BOOL hoge;
 
 - (IBAction)newButtonPushed:(id)sender;
 - (IBAction)saveButtonPushed:(id)sender;
@@ -65,6 +66,21 @@
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getSpotsDone:) name:NOTIF_SpotsModel_GetSpots object:nil];
     NSLog(@"%s",__func__);
+    
+//    if (_hoge) {
+//        [self.navigationController setNavigationBarHidden:YES animated:NO];
+//        
+//        CGRect frame = _guidanceView.frame;
+//        frame.origin.y -= 44;
+//        
+//        [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+//            _searchBar.frame = CGRectMake(0, 20, 320, 44);
+//            _guidanceView.frame = frame;
+//        }];
+//        _searchBar.showsCancelButton = YES;
+//    }
+//    
+//    _hoge = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -72,6 +88,11 @@
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIF_SpotsModel_GetSpots object:nil];
     NSLog(@"%s",__func__);
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [_searchBar resignFirstResponder];
+    _searchBar.showsCancelButton = NO;
+    _tableView.hidden = YES;
 }
 
 - (void)getSpotsDone:(NSNotification *)notification
@@ -467,7 +488,6 @@
     if (!self.selectedVenueArray) {
         self.selectedVenueArray = [[NSMutableArray alloc] init];
     }
-    
     [_selectedVenueArray addObject:[_venueArray objectAtIndex:indexPath.row]];
     //NSInteger index = _selectedVenueArray.count-1;
     

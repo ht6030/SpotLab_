@@ -10,7 +10,7 @@
 
 #define NOTIF_SpotsModel_GetSpots   @"NOTIF_SpotsModel_GetSpots"
 
-@interface FirstViewController : UIViewController
+@interface MakeSpotsViewController : UIViewController
 <MKMapViewDelegate, UISearchBarDelegate, UITableViewDelegate,UITableViewDataSource, UIActionSheetDelegate, CLLocationManagerDelegate>
 
 @end

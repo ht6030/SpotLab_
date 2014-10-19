@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 高橋 弘. All rights reserved.
 //
 
-#import "HTNotification.h"
+#import "SLNotification.h"
 
 NSString *const HTReloadMyPageNotification = @"HTReloadMyPageNotification";
 
-@implementation HTNotification
+@implementation SLNotification
 
 @end

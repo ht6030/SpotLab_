@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 高橋 弘. All rights reserved.
 //
 
-#import "HTAnnotation.h"
+#import "SLAnnotation.h"
 
-@implementation HTAnnotation
+@implementation SLAnnotation
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)co
 {

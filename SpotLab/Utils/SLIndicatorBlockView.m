@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 高橋 弘. All rights reserved.
 //
 
-#import "HTIndicatorBlockView.h"
+#import "SLIndicatorBlockView.h"
 
-@interface HTIndicatorBlockView()
+@interface SLIndicatorBlockView()
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
 @end
 
-@implementation HTIndicatorBlockView
+@implementation SLIndicatorBlockView
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

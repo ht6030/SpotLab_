@@ -6,16 +6,16 @@
 //  Copyright (c) 2014年 高橋 弘. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "MyListViewController.h"
 #import "SpotsMapViewController.h"
-#import "HTNotification.h"
+#import "SLNotification.h"
 
-@interface SecondViewController ()
+@interface MyListViewController ()
 //@property (strong, nonatomic) NSDictionary *savedDictionary;
 @property (strong, nonatomic) NSMutableArray *storedArray;
 @end
 
-@implementation SecondViewController
+@implementation MyListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

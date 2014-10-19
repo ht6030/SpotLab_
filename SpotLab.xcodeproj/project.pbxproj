@@ -8,17 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B6453A18C63B48AB88EC77D9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C96C0CAFF04B9791A7622C /* libPods.a */; };
-		E10E336419C900F800415D65 /* HTAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335919C900F800415D65 /* HTAnnotation.m */; };
-		E10E336519C900F800415D65 /* HTArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335B19C900F800415D65 /* HTArrowView.m */; };
-		E10E336619C900F800415D65 /* HTIndicatorBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335D19C900F800415D65 /* HTIndicatorBlockView.m */; };
-		E10E336719C900F800415D65 /* HTNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335F19C900F800415D65 /* HTNotification.m */; };
-		E10E336819C900F800415D65 /* HTWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336119C900F800415D65 /* HTWebView.m */; };
+		E10E336419C900F800415D65 /* SLAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335919C900F800415D65 /* SLAnnotation.m */; };
+		E10E336519C900F800415D65 /* SLArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335B19C900F800415D65 /* SLArrowView.m */; };
+		E10E336619C900F800415D65 /* SLIndicatorBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335D19C900F800415D65 /* SLIndicatorBlockView.m */; };
+		E10E336719C900F800415D65 /* SLNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335F19C900F800415D65 /* SLNotification.m */; };
 		E10E336919C900F800415D65 /* URLCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336319C900F800415D65 /* URLCodec.m */; };
 		E10E336C19C9011000415D65 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336B19C9011000415D65 /* DataManager.m */; };
 		E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336E19C9011E00415D65 /* SpotsModel.m */; };
 		E10E337319C9015B00415D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10E337119C9015B00415D65 /* Main.storyboard */; };
-		E10E337D19C9019100415D65 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337619C9019100415D65 /* FirstViewController.m */; };
-		E10E337E19C9019100415D65 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337819C9019100415D65 /* SecondViewController.m */; };
+		E10E337D19C9019100415D65 /* MakeSpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337619C9019100415D65 /* MakeSpotsViewController.m */; };
+		E10E337E19C9019100415D65 /* MyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337819C9019100415D65 /* MyListViewController.m */; };
 		E10E337F19C9019100415D65 /* SpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337A19C9019100415D65 /* SpotDetailViewController.m */; };
 		E10E338019C9019100415D65 /* SpotsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337C19C9019100415D65 /* SpotsMapViewController.m */; };
 		E12D88EF18DE78AE00D0468A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88EE18DE78AE00D0468A /* Foundation.framework */; };
@@ -52,16 +51,14 @@
 /* Begin PBXFileReference section */
 		32C96C0CAFF04B9791A7622C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99FFC56789B428DBEF7DA51 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		E10E335819C900F800415D65 /* HTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTAnnotation.h; path = Utils/HTAnnotation.h; sourceTree = "<group>"; };
-		E10E335919C900F800415D65 /* HTAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTAnnotation.m; path = Utils/HTAnnotation.m; sourceTree = "<group>"; };
-		E10E335A19C900F800415D65 /* HTArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTArrowView.h; path = Utils/HTArrowView.h; sourceTree = "<group>"; };
-		E10E335B19C900F800415D65 /* HTArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTArrowView.m; path = Utils/HTArrowView.m; sourceTree = "<group>"; };
-		E10E335C19C900F800415D65 /* HTIndicatorBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTIndicatorBlockView.h; path = Utils/HTIndicatorBlockView.h; sourceTree = "<group>"; };
-		E10E335D19C900F800415D65 /* HTIndicatorBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTIndicatorBlockView.m; path = Utils/HTIndicatorBlockView.m; sourceTree = "<group>"; };
-		E10E335E19C900F800415D65 /* HTNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTNotification.h; path = Utils/HTNotification.h; sourceTree = "<group>"; };
-		E10E335F19C900F800415D65 /* HTNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTNotification.m; path = Utils/HTNotification.m; sourceTree = "<group>"; };
-		E10E336019C900F800415D65 /* HTWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTWebView.h; path = Utils/HTWebView.h; sourceTree = "<group>"; };
-		E10E336119C900F800415D65 /* HTWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTWebView.m; path = Utils/HTWebView.m; sourceTree = "<group>"; };
+		E10E335819C900F800415D65 /* SLAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAnnotation.h; path = Utils/SLAnnotation.h; sourceTree = "<group>"; };
+		E10E335919C900F800415D65 /* SLAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAnnotation.m; path = Utils/SLAnnotation.m; sourceTree = "<group>"; };
+		E10E335A19C900F800415D65 /* SLArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLArrowView.h; path = Utils/SLArrowView.h; sourceTree = "<group>"; };
+		E10E335B19C900F800415D65 /* SLArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLArrowView.m; path = Utils/SLArrowView.m; sourceTree = "<group>"; };
+		E10E335C19C900F800415D65 /* SLIndicatorBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLIndicatorBlockView.h; path = Utils/SLIndicatorBlockView.h; sourceTree = "<group>"; };
+		E10E335D19C900F800415D65 /* SLIndicatorBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLIndicatorBlockView.m; path = Utils/SLIndicatorBlockView.m; sourceTree = "<group>"; };
+		E10E335E19C900F800415D65 /* SLNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLNotification.h; path = Utils/SLNotification.h; sourceTree = "<group>"; };
+		E10E335F19C900F800415D65 /* SLNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLNotification.m; path = Utils/SLNotification.m; sourceTree = "<group>"; };
 		E10E336219C900F800415D65 /* URLCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLCodec.h; path = Utils/URLCodec.h; sourceTree = "<group>"; };
 		E10E336319C900F800415D65 /* URLCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLCodec.m; path = Utils/URLCodec.m; sourceTree = "<group>"; };
 		E10E336A19C9011000415D65 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Models/DataManager/DataManager.h; sourceTree = "<group>"; };
@@ -69,10 +66,10 @@
 		E10E336D19C9011E00415D65 /* SpotsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotsModel.h; path = Models/SpotsModel.h; sourceTree = "<group>"; };
 		E10E336E19C9011E00415D65 /* SpotsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotsModel.m; path = Models/SpotsModel.m; sourceTree = "<group>"; };
 		E10E337219C9015B00415D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SpotLab/Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E10E337519C9019000415D65 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = Controllers/FirstViewController.h; sourceTree = "<group>"; };
-		E10E337619C9019100415D65 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = Controllers/FirstViewController.m; sourceTree = "<group>"; };
-		E10E337719C9019100415D65 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = Controllers/SecondViewController.h; sourceTree = "<group>"; };
-		E10E337819C9019100415D65 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = Controllers/SecondViewController.m; sourceTree = "<group>"; };
+		E10E337519C9019000415D65 /* MakeSpotsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MakeSpotsViewController.h; path = Controllers/MakeSpotsViewController.h; sourceTree = "<group>"; };
+		E10E337619C9019100415D65 /* MakeSpotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MakeSpotsViewController.m; path = Controllers/MakeSpotsViewController.m; sourceTree = "<group>"; };
+		E10E337719C9019100415D65 /* MyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyListViewController.h; path = Controllers/MyListViewController.h; sourceTree = "<group>"; };
+		E10E337819C9019100415D65 /* MyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyListViewController.m; path = Controllers/MyListViewController.m; sourceTree = "<group>"; };
 		E10E337919C9019100415D65 /* SpotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotDetailViewController.h; path = Controllers/SpotDetailViewController.h; sourceTree = "<group>"; };
 		E10E337A19C9019100415D65 /* SpotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotDetailViewController.m; path = Controllers/SpotDetailViewController.m; sourceTree = "<group>"; };
 		E10E337B19C9019100415D65 /* SpotsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotsMapViewController.h; path = Controllers/SpotsMapViewController.h; sourceTree = "<group>"; };
@@ -137,10 +134,10 @@
 		E10E337419C9017E00415D65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E10E337519C9019000415D65 /* FirstViewController.h */,
-				E10E337619C9019100415D65 /* FirstViewController.m */,
-				E10E337719C9019100415D65 /* SecondViewController.h */,
-				E10E337819C9019100415D65 /* SecondViewController.m */,
+				E10E337519C9019000415D65 /* MakeSpotsViewController.h */,
+				E10E337619C9019100415D65 /* MakeSpotsViewController.m */,
+				E10E337719C9019100415D65 /* MyListViewController.h */,
+				E10E337819C9019100415D65 /* MyListViewController.m */,
 				E10E337919C9019100415D65 /* SpotDetailViewController.h */,
 				E10E337A19C9019100415D65 /* SpotDetailViewController.m */,
 				E10E337B19C9019100415D65 /* SpotsMapViewController.h */,
@@ -197,16 +194,14 @@
 		E1383AA7196FA00B0080E610 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E10E335819C900F800415D65 /* HTAnnotation.h */,
-				E10E335919C900F800415D65 /* HTAnnotation.m */,
-				E10E335A19C900F800415D65 /* HTArrowView.h */,
-				E10E335B19C900F800415D65 /* HTArrowView.m */,
-				E10E335C19C900F800415D65 /* HTIndicatorBlockView.h */,
-				E10E335D19C900F800415D65 /* HTIndicatorBlockView.m */,
-				E10E335E19C900F800415D65 /* HTNotification.h */,
-				E10E335F19C900F800415D65 /* HTNotification.m */,
-				E10E336019C900F800415D65 /* HTWebView.h */,
-				E10E336119C900F800415D65 /* HTWebView.m */,
+				E10E335819C900F800415D65 /* SLAnnotation.h */,
+				E10E335919C900F800415D65 /* SLAnnotation.m */,
+				E10E335A19C900F800415D65 /* SLArrowView.h */,
+				E10E335B19C900F800415D65 /* SLArrowView.m */,
+				E10E335C19C900F800415D65 /* SLIndicatorBlockView.h */,
+				E10E335D19C900F800415D65 /* SLIndicatorBlockView.m */,
+				E10E335E19C900F800415D65 /* SLNotification.h */,
+				E10E335F19C900F800415D65 /* SLNotification.m */,
 				E10E336219C900F800415D65 /* URLCodec.h */,
 				E10E336319C900F800415D65 /* URLCodec.m */,
 			);
@@ -403,18 +398,17 @@
 			files = (
 				E10E337F19C9019100415D65 /* SpotDetailViewController.m in Sources */,
 				E10E338019C9019100415D65 /* SpotsMapViewController.m in Sources */,
-				E10E337E19C9019100415D65 /* SecondViewController.m in Sources */,
-				E10E337D19C9019100415D65 /* FirstViewController.m in Sources */,
+				E10E337E19C9019100415D65 /* MyListViewController.m in Sources */,
+				E10E337D19C9019100415D65 /* MakeSpotsViewController.m in Sources */,
 				E10E336C19C9011000415D65 /* DataManager.m in Sources */,
 				E1D44827196F6ACF00BA868C /* AppDelegate.m in Sources */,
-				E10E336519C900F800415D65 /* HTArrowView.m in Sources */,
-				E10E336419C900F800415D65 /* HTAnnotation.m in Sources */,
+				E10E336519C900F800415D65 /* SLArrowView.m in Sources */,
+				E10E336419C900F800415D65 /* SLAnnotation.m in Sources */,
 				E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */,
-				E10E336719C900F800415D65 /* HTNotification.m in Sources */,
+				E10E336719C900F800415D65 /* SLNotification.m in Sources */,
 				E10E336919C900F800415D65 /* URLCodec.m in Sources */,
-				E10E336619C900F800415D65 /* HTIndicatorBlockView.m in Sources */,
+				E10E336619C900F800415D65 /* SLIndicatorBlockView.m in Sources */,
 				E1D44832196F6ACF00BA868C /* main.m in Sources */,
-				E10E336819C900F800415D65 /* HTWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

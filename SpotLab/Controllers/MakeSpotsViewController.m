@@ -6,17 +6,17 @@
 //  Copyright (c) 2014年 高橋 弘. All rights reserved.
 //
 
-#import "FirstViewController.h"
-#import "HTAnnotation.h"
+#import "MakeSpotsViewController.h"
+#import "SLAnnotation.h"
 #import "AFNetworking.h"
 #import "AppDelegate.h"
 #import "URLCodec.h"
-#import "HTNotification.h"
-#import "HTIndicatorBlockView.h"
+#import "SLNotification.h"
+#import "SLIndicatorBlockView.h"
 #import "SpotDetailViewController.h"
 #import "SpotsModel.h"
 
-@interface FirstViewController ()
+@interface MakeSpotsViewController ()
 //@property (weak, nonatomic) IBOutlet UIBarButtonItem *newBtn;
 //@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 //@property (strong, nonatomic) CLGeocoder *geocoder;
@@ -24,14 +24,13 @@
 @property (weak, nonatomic) IBOutlet UIView *guidanceView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet HTIndicatorBlockView *blockView;
+@property (weak, nonatomic) IBOutlet SLIndicatorBlockView *blockView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 
 @property (strong, nonatomic) NSMutableArray *venueArray;
 @property (strong, nonatomic) NSMutableArray *selectedVenueArray;
 @property (nonatomic) NSInteger nowSelectedIndex;
-@property (nonatomic) BOOL hoge;
 
 - (IBAction)newButtonPushed:(id)sender;
 - (IBAction)saveButtonPushed:(id)sender;
@@ -39,7 +38,7 @@
 @end
 
 
-@implementation FirstViewController
+@implementation MakeSpotsViewController
 
 #pragma mark - View lifcycle
 
@@ -55,7 +54,6 @@
     _tableView.dataSource = self;
 
     _venueArray = [[NSMutableArray alloc] init];
-    
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
     [_locationManager startUpdatingLocation];
@@ -63,32 +61,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"%s",__func__);
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getSpotsDone:) name:NOTIF_SpotsModel_GetSpots object:nil];
-    NSLog(@"%s",__func__);
-    
-//    if (_hoge) {
-//        [self.navigationController setNavigationBarHidden:YES animated:NO];
-//        
-//        CGRect frame = _guidanceView.frame;
-//        frame.origin.y -= 44;
-//        
-//        [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-//            _searchBar.frame = CGRectMake(0, 20, 320, 44);
-//            _guidanceView.frame = frame;
-//        }];
-//        _searchBar.showsCancelButton = YES;
-//    }
-//    
-//    _hoge = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIF_SpotsModel_GetSpots object:nil];
-    NSLog(@"%s",__func__);
-    
+
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [_searchBar resignFirstResponder];
     _searchBar.showsCancelButton = NO;
@@ -106,7 +88,6 @@
         NSLog(@"venueName = %@",venueName);
         [_venueArray addObject:venue];
     }
-    
     _blockView.hidden = YES;
     _tableView.hidden = NO;
     [_tableView reloadData];
@@ -142,8 +123,6 @@
 
 - (IBAction)saveButtonPushed:(id)sender
 {
-    NSLog(@"%s",__func__);
-    
     if (_selectedVenueArray.count == 0) {
         [[[UIAlertView alloc] initWithTitle:nil
                                     message:@"まだスポットがありません"
@@ -152,7 +131,6 @@
                           otherButtonTitles:nil] show];
         return;
     }
-    
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:nil
                                message:@"このリストのタイトルを\n入力してください"
@@ -202,7 +180,7 @@
  */
 - (void)movePinLocationTo:(CLLocationCoordinate2D)coord parameters:(NSDictionary *)parameters
 {
-    HTAnnotation *annotation = [[HTAnnotation alloc] initWithCoordinate:coord attributes:parameters];
+    SLAnnotation *annotation = [[SLAnnotation alloc] initWithCoordinate:coord attributes:parameters];
     [_mapView addAnnotation:annotation];
     [_mapView selectAnnotation:annotation animated:YES];
     
@@ -236,7 +214,7 @@
     
     for (int i=0; i<_selectedVenueArray.count; i++) {
         NSString *selectedVenueId = [[_selectedVenueArray objectAtIndex:i] objectForKey:@"id"];
-        NSString *annotationVenueId = [((HTAnnotation *)view.annotation).attributes objectForKey:@"id"];
+        NSString *annotationVenueId = [((SLAnnotation *)view.annotation).attributes objectForKey:@"id"];
         if ([selectedVenueId isEqualToString:annotationVenueId]) {
             _nowSelectedIndex = i;
             break;
@@ -280,7 +258,6 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
-
 
 
 #pragma mark - UIAlertViewDelegate
@@ -377,7 +354,7 @@
         if (buttonIndex == 0)
             return;
         
-        for (HTAnnotation *annotation in _mapView.annotations) {
+        for (SLAnnotation *annotation in _mapView.annotations) {
             NSString *annotationVenueId = [annotation.attributes objectForKey:@"id"];
             NSString *nowSelectedVenueId = [[_selectedVenueArray objectAtIndex:_nowSelectedIndex] objectForKey:@"id"];
             if ([annotationVenueId isEqualToString:nowSelectedVenueId]) {
@@ -403,13 +380,13 @@
     //NSLog(@"%s",__func__);
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
-    CGRect frame = _guidanceView.frame;
-    frame.origin.y -= 44;
-    
-    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-        _searchBar.frame = CGRectMake(0, 20, 320, 44);
-        _guidanceView.frame = frame;
-    }];
+//    CGRect frame = _guidanceView.frame;
+//    frame.origin.y -= 44;
+//    
+//    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+//        _searchBar.frame = CGRectMake(0, 20, 320, 44);
+//        _guidanceView.frame = frame;
+//    }];
     _searchBar.showsCancelButton = YES;
 }
 

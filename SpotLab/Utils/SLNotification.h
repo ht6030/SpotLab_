@@ -10,6 +10,6 @@
 
 UIKIT_EXTERN NSString *const HTReloadMyPageNotification;
 
-@interface HTNotification : NSObject
+@interface SLNotification : NSObject
 
 @end

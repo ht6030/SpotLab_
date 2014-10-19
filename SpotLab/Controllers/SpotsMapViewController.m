@@ -8,17 +8,17 @@
 
 #import "SpotsMapViewController.h"
 #import "AppDelegate.h"
-#import "HTAnnotation.h"
+#import "SLAnnotation.h"
 #import "SpotDetailViewController.h"
 #import "AFNetworking.h"
 #import "URLCodec.h"
-#import "HTIndicatorBlockView.h"
+#import "SLIndicatorBlockView.h"
 #import "SpotsModel.h"
 
 @interface SpotsMapViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet HTIndicatorBlockView *blockView;
+@property (weak, nonatomic) IBOutlet SLIndicatorBlockView *blockView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (copy, nonatomic) NSDictionary *selectedVenueDict;
@@ -67,7 +67,7 @@
         lon = [[locDict objectForKey:@"lng"] doubleValue];
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lon);
 
-        HTAnnotation *annotation = [[HTAnnotation alloc] initWithCoordinate:coord attributes:venueDict];
+        SLAnnotation *annotation = [[SLAnnotation alloc] initWithCoordinate:coord attributes:venueDict];
         [_mapView addAnnotation:annotation];
     }
 
@@ -107,7 +107,7 @@
  */
 - (void)movePinLocationTo:(CLLocationCoordinate2D)coord parameters:(NSDictionary *)parameters
 {
-    HTAnnotation *annotation = [[HTAnnotation alloc] initWithCoordinate:coord attributes:parameters];
+    SLAnnotation *annotation = [[SLAnnotation alloc] initWithCoordinate:coord attributes:parameters];
     [_mapView addAnnotation:annotation];
     [_mapView selectAnnotation:annotation animated:YES];
     
@@ -220,7 +220,7 @@
 {
     NSLog(@"%s",__func__);
     
-    _selectedVenueDict = ((HTAnnotation *)view.annotation).attributes;
+    _selectedVenueDict = ((SLAnnotation *)view.annotation).attributes;
     
     UIActionSheet *actionSheet =
     [[UIActionSheet alloc] initWithTitle:nil
@@ -303,7 +303,7 @@
     if (buttonIndex == 0)
         return;
     
-    for (HTAnnotation *annotation in _mapView.annotations) {
+    for (SLAnnotation *annotation in _mapView.annotations) {
         NSString *annotationVenueId = [annotation.attributes objectForKey:@"id"];
         NSString *nowSelectedVenueId = [_selectedVenueDict objectForKey:@"id"];
         if (![annotationVenueId isEqualToString:nowSelectedVenueId])

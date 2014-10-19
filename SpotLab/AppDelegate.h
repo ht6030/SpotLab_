@@ -15,8 +15,4 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-+ (void)saveCookies; // 全クッキーの保存
-+ (void)loadCookies; // 全クッキーのロード
-+ (void)wipeCookies; // 全クッキーの削除
-
 @end

@@ -19,10 +19,10 @@
     //DataManager *data = [DataManager sharedManager];
     
     if (coordinate.latitude == 0.0) {
-        coordinate.latitude = 35.682085;
+        coordinate.latitude = 35.685175;
     }
     if (coordinate.longitude == 0.0) {
-        coordinate.longitude = 139.766221;
+        coordinate.longitude = 139.752799;
     }
     
     NSString *urlStr = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=%@&client_secret=%@&v=20130815&ll=%f,%f&query=%@", FS_CLIENT_ID, FS_CLIENT_SECRET, coordinate.latitude, coordinate.longitude, query];

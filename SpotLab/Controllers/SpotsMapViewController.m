@@ -258,25 +258,53 @@
 }
 
 
+
+
+- (void)moveSeachBarAbove
+{
+    _searchBar.showsCancelButton = YES;
+    CGRect selfFrame = self.view.frame;
+    selfFrame.origin.y -= 44;
+    
+    if (selfFrame.origin.y == -88)
+        return;
+    
+    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+        self.view.frame = selfFrame;
+        NSLog(@"self.view.frame:%@",NSStringFromCGRect(self.view.frame));
+    }];
+}
+
+
+- (void)moveSeachBarBelow
+{
+    [_searchBar resignFirstResponder];
+    _searchBar.showsCancelButton = NO;
+    _tableView.hidden = YES;
+}
+
+
 #pragma mark - UISearchBar delegate
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     //NSLog(@"%s",__func__);
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-        _searchBar.frame = CGRectMake(0, 20, 320, 44);
-    }];
-    _searchBar.showsCancelButton = YES;
+    [self performSelector:@selector(moveSeachBarAbove) withObject:nil afterDelay:0.01];
+    
+//    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+//        _searchBar.frame = CGRectMake(0, 20, 320, 44);
+//    }];
+//    _searchBar.showsCancelButton = YES;
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar*)searchBar
 {
     //NSLog(@"%s",__func__);
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-        _searchBar.frame = CGRectMake(0, 64, 320, 44);
-    }];
+//    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+//        _searchBar.frame = CGRectMake(0, 64, 320, 44);
+//    }];
     [_searchBar resignFirstResponder];
     _searchBar.showsCancelButton = NO;
     _tableView.hidden = YES;

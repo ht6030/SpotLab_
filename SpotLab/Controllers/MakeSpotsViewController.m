@@ -15,23 +15,22 @@
 #import "SLIndicatorBlockView.h"
 #import "SpotDetailViewController.h"
 #import "SpotsModel.h"
+#import "UIActionSheet+Blocks.h"
+#import "UIAlertView+Blocks.h"
 
 @interface MakeSpotsViewController ()
-//@property (weak, nonatomic) IBOutlet UIBarButtonItem *newBtn;
-//@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-//@property (strong, nonatomic) CLGeocoder *geocoder;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *guidanceView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet SLIndicatorBlockView *blockView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (nonatomic) CLLocationCoordinate2D coordinate;
-
 @property (strong, nonatomic) NSMutableArray *venueArray;
 @property (strong, nonatomic) NSMutableArray *selectedVenueArray;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic) NSInteger nowSelectedIndex;
 
+//@property (strong, nonatomic) CLGeocoder *geocoder;
 - (IBAction)newButtonPushed:(id)sender;
 - (IBAction)saveButtonPushed:(id)sender;
 
@@ -54,16 +53,22 @@
     _tableView.dataSource = self;
 
     _venueArray = [[NSMutableArray alloc] init];
+    
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.delegate = self;
-    [_locationManager startUpdatingLocation];
+    if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) { // iOS8以降
+        // 位置情報測位の許可を求めるメッセージを表示する
+        [_locationManager requestWhenInUseAuthorization]; // 使用中のみ許可
+    } else { // iOS7以前
+        // 位置測位スタート
+        [_locationManager startUpdatingLocation];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"%s",__func__);
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getSpotsDone:) name:NOTIF_SpotsModel_GetSpots object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getSpotsCompleted:) name:NOTIF_SpotsModel_GetSpots object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -71,13 +76,16 @@
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIF_SpotsModel_GetSpots object:nil];
 
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [_searchBar resignFirstResponder];
-    _searchBar.showsCancelButton = NO;
-    _tableView.hidden = YES;
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    [_searchBar resignFirstResponder];
+//    _searchBar.showsCancelButton = NO;
+//    _tableView.hidden = YES;
 }
 
-- (void)getSpotsDone:(NSNotification *)notification
+
+#pragma mark - Notification method
+
+- (void)getSpotsCompleted:(NSNotification *)notification
 {
     [_venueArray removeAllObjects];
     NSArray *venuesArray = [[notification.userInfo objectForKey:@"response"] objectForKey:@"venues"];
@@ -92,32 +100,6 @@
     _tableView.hidden = NO;
     [_tableView reloadData];
 }
-
-
-#pragma mark - CLLocationManager Delegate
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    // もっとも最近の位置情報を得る
-    CLLocation *recentLocation = locations.lastObject;
-    _coordinate = recentLocation.coordinate;
-    NSLog(@"latitude  = %f",_coordinate.latitude);
-    NSLog(@"longitude = %f",_coordinate.longitude);
-    
-    [self setCenter:_coordinate.latitude setCentre:_coordinate.longitude latSpan:0.25 lonSpan:0.22];
-    
-    [_locationManager stopUpdatingLocation];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    _coordinate.latitude  = 35.682085;
-    _coordinate.longitude = 139.766221;
-    [self setCenter:_coordinate.latitude setCentre:_coordinate.longitude latSpan:0.25 lonSpan:0.22];
-    
-    [_locationManager stopUpdatingLocation];
-}
-    
 
 #pragma mark - IBAction method
 
@@ -150,29 +132,76 @@
     if (_selectedVenueArray.count == 0)
         return;
     
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:nil
-                               message:@"作成中のリストを破棄しても\nよろしいですか？"
-                              delegate:self
-                     cancelButtonTitle:@"キャンセル"
-                     otherButtonTitles:@"OK", nil];
-    alert.tag = 3;
-    [alert show];
+    [UIAlertView showWithTitle:nil
+                       message:@"作成中のリストを破棄しても\nよろしいですか？"
+             cancelButtonTitle:@"キャンセル"
+             otherButtonTitles:@[@"OK"]
+                      tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                          if (alertView.cancelButtonIndex == buttonIndex)
+                              return;
+                          [_mapView removeAnnotations:_mapView.annotations];
+                          [_selectedVenueArray removeAllObjects];
+                          _searchBar.text = nil;
+                          _guidanceView.hidden = NO;
+                          self.navigationItem.rightBarButtonItem.enabled = NO;
+                      }];
+    
+//    UIAlertView *alert =
+//    [[UIAlertView alloc] initWithTitle:nil
+//                               message:@"作成中のリストを破棄しても\nよろしいですか？"
+//                              delegate:self
+//                     cancelButtonTitle:@"キャンセル"
+//                     otherButtonTitles:@"OK", nil];
+//    alert.tag = 3;
+//    [alert show];
 }
 
 
 #pragma mark - Private method
 
-- (void)setCenter:(double)latdbl setCentre:(double)londbl latSpan:(double)latS lonSpan:(double)lonS
+- (void)spotDeleteSelected
 {
-	MKCoordinateRegion region  = _mapView.region;
-	region.center.latitude     = latdbl;
-	region.center.longitude    = londbl;
-	region.span.latitudeDelta  = latS;
-	region.span.longitudeDelta = lonS;
-	[_mapView setRegion:region animated:YES];
-    
-	//_mapView.showsUserLocation = YES;
+    [UIAlertView showWithTitle:nil
+                       message:@"このスポットをリストから\n削除してもよろしいですか？"
+             cancelButtonTitle:@"キャンセル"
+             otherButtonTitles:@[@"OK"]
+                      tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                          if (alertView.cancelButtonIndex == buttonIndex)
+                              return;
+                          
+                          for (SLAnnotation *annotation in _mapView.annotations) {
+                              NSString *annotationVenueId = [annotation.attributes objectForKey:@"id"];
+                              NSString *nowSelectedVenueId = [[_selectedVenueArray objectAtIndex:_nowSelectedIndex] objectForKey:@"id"];
+                              if (![annotationVenueId isEqualToString:nowSelectedVenueId])
+                                  continue;
+                              
+                              [_mapView removeAnnotation:annotation];
+                              [_selectedVenueArray removeObjectAtIndex:_nowSelectedIndex];
+                              
+                              if (_selectedVenueArray.count == 0)
+                                  self.navigationItem.rightBarButtonItem.enabled = NO;
+                              
+                              return;
+                          }
+                      }];
+}
+
+/**
+ * set Map center Point
+ */
+- (void)setCenter:(MKMapView *)mapView
+         latPoint:(double)latdbl
+         lonPoint:(double)londbl
+          latSpan:(double)latS
+          lonSpan:(double)lonS
+{
+    MKCoordinateRegion region  = _mapView.region;
+    region.center.latitude     = latdbl;
+    region.center.longitude    = londbl;
+    region.span.latitudeDelta  = latS;
+    region.span.longitudeDelta = lonS;
+    [mapView setRegion:region animated:YES];
+    //_mapView.showsUserLocation = YES;
 }
 
 /**
@@ -191,6 +220,72 @@
 	region.span.longitudeDelta = 0.22;
     [_mapView setRegion:region animated:YES];
 }
+
+- (void)moveSeachBarAbove
+{
+    //    CGRect frame = _guidanceView.frame;
+    //    frame.origin.y -= 44;
+    
+    _searchBar.showsCancelButton = YES;
+    CGRect selfFrame = self.view.frame;
+    selfFrame.origin.y -= 44;
+    
+    if (selfFrame.origin.y == -88)
+        return;
+    
+    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+        //_searchBar.frame = CGRectMake(0, 20, 320, 44);
+        //_guidanceView.frame = frame;
+        self.view.frame = selfFrame;
+        NSLog(@"self.view.frame:%@",NSStringFromCGRect(self.view.frame));
+    }];
+}
+
+- (void)moveSeachBarBelow
+{
+    //    CGRect selfFrame = self.view.frame;
+    //    selfFrame.origin.y += 44;
+    //    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+    //        self.view.frame = selfFrame;
+    //    }];
+    [_searchBar resignFirstResponder];
+    _searchBar.showsCancelButton = NO;
+    _tableView.hidden = YES;
+}
+
+
+
+#pragma mark - CLLocationManager Delegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusAuthorizedAlways ||
+        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        // 位置測位スタート
+        [_locationManager startUpdatingLocation];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"%s",__func__);
+    // もっとも最近の位置情報を得る
+    CLLocation *recentLocation = locations.lastObject;
+    _coordinate = recentLocation.coordinate;
+    NSLog(@"latitude  = %f",_coordinate.latitude);
+    NSLog(@"longitude = %f",_coordinate.longitude);
+    [self setCenter:_mapView latPoint:_coordinate.latitude lonPoint:_coordinate.longitude latSpan:0.25 lonSpan:0.22];
+    [_locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    _coordinate.latitude  = 35.685175;
+    _coordinate.longitude = 139.752799;
+    [self setCenter:_mapView latPoint:_coordinate.latitude lonPoint:_coordinate.longitude latSpan:0.25 lonSpan:0.22];
+    [_locationManager stopUpdatingLocation];
+}
+
 
 
 #pragma mark - MKMapView delegate
@@ -221,187 +316,118 @@
         }
     }
     
-    UIActionSheet *actionSheet =
-    [[UIActionSheet alloc] initWithTitle:nil
-                                delegate:self
-                       cancelButtonTitle:@"キャンセル"
-                  destructiveButtonTitle:@"このスポットをリストから削除"
-                       otherButtonTitles:@"スポット詳細へ",nil];
-    [actionSheet showInView:self.view.window];
+    [UIActionSheet showInView:self.view.window
+                    withTitle:nil
+            cancelButtonTitle:@"キャンセル"
+       destructiveButtonTitle:@"このスポットをリストから削除"
+            otherButtonTitles:@[@"スポット詳細へ"]
+                     tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+                         if (actionSheet.cancelButtonIndex == buttonIndex)
+                             return;
+                         
+                         if (buttonIndex == 1) {
+                             if (self.navigationController.navigationBarHidden) {
+                                 [self.navigationController setNavigationBarHidden:NO animated:NO];
+                             }
+                             SpotDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SpotDetailScene"];
+                             vc.venueDict = [_selectedVenueArray objectAtIndex:_nowSelectedIndex];
+                             [self.navigationController pushViewController:vc animated:YES];
+                             return;
+                         }
+                         [self spotDeleteSelected];
+                     }];
 }
-
-
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0) {
-        UIAlertView *alert =
-        [[UIAlertView alloc] initWithTitle:nil
-                                   message:@"このスポットをリストから\n削除してもよろしいですか？"
-                                  delegate:self
-                         cancelButtonTitle:@"キャンセル"
-                         otherButtonTitles:@"OK", nil];
-        alert.tag = 4;
-        [alert show];
-    }
-    
-    // スポット詳細へ
-    else if (buttonIndex == 1) {
-        
-        if (self.navigationController.navigationBarHidden) {
-            [self.navigationController setNavigationBarHidden:NO animated:NO];
-        }
-        
-        SpotDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SpotDetailScene"];
-        vc.venueDict = [_selectedVenueArray objectAtIndex:_nowSelectedIndex];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-}
-
 
 #pragma mark - UIAlertViewDelegate
 
 - (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
 {
-    if (alertView.tag == 1) {
-        NSString *inputText = [[alertView textFieldAtIndex:0] text];
-        if (inputText.length >= 1 ) {
-            return YES;
-        } else {
-            return NO;
-        }
+    NSString *inputText = [[alertView textFieldAtIndex:0] text];
+    if (inputText.length >= 1 ) {
+        return YES;
+    } else {
+        return NO;
     }
-    return YES;
 }
 
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     // 保存する
-    if (alertView.tag == 1) {
-        
-        if (buttonIndex == 0)
-            return;
-        
-        NSString *filePath = [[NSHomeDirectory() stringByAppendingPathComponent:@"tmp"] stringByAppendingPathComponent:@"sample.binary"];
-        NSData *myData = [NSData dataWithContentsOfFile:filePath];
-        NSMutableArray *storedArray = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
-        if (!storedArray) {
-            storedArray = [[NSMutableArray alloc] init];
-        }
-        
-        // まとめごとのオブジェクトとなるNSDictionaryを作る。
-        NSString *inputText = [[alertView textFieldAtIndex:0] text];
-        NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                    inputText, @"title",
-                                    _selectedVenueArray, @"venues",
-                                    nil];
-        
-        //[storedArray addObject:dictionary];
-        [storedArray insertObject:dictionary atIndex:0];
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:storedArray];
-        [data writeToFile:filePath atomically:YES];
-        
-        
-        // ここでSecondViewのテーブルをリロードするメソッドを投げる
-        [[NSNotificationCenter defaultCenter] postNotificationName:HTReloadMyPageNotification object:self userInfo:nil];
-        
-        UIAlertView *alert =
-        [[UIAlertView alloc] initWithTitle:nil
-                                    message:@"スポットリストが保存されました"
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-        alert.tag = 2;
-        [alert show];
+    if (buttonIndex == 0)
+        return;
+    
+    NSString *filePath = [[NSHomeDirectory() stringByAppendingPathComponent:@"tmp"] stringByAppendingPathComponent:@"sample.binary"];
+    NSData *myData = [NSData dataWithContentsOfFile:filePath];
+    NSMutableArray *storedArray = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
+    if (!storedArray) {
+        storedArray = [[NSMutableArray alloc] init];
     }
     
-    // 保存確定後
-    else if (alertView.tag == 2) {
-        
-        self.tabBarController.selectedIndex = 1;
+    // まとめごとのオブジェクトとなるNSDictionaryを作る。
+    NSString *inputText = [[alertView textFieldAtIndex:0] text];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                inputText, @"title",
+                                _selectedVenueArray, @"venues",
+                                nil];
     
-        // マップのアノテーションをクリア
-        [_mapView removeAnnotations:_mapView.annotations];
-        _searchBar.text = nil;
-        [_selectedVenueArray removeAllObjects];
-        [self setCenter:_coordinate.latitude setCentre:_coordinate.longitude latSpan:0.25 lonSpan:0.22];
-        
-        _guidanceView.hidden = NO;
-        //self.navigationItem.leftBarButtonItem.enabled = NO;
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-    }
+    //[storedArray addObject:dictionary];
+    [storedArray insertObject:dictionary atIndex:0];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:storedArray];
+    [data writeToFile:filePath atomically:YES];
     
-    // 新規
-    else if (alertView.tag == 3) {
-        
-        if (buttonIndex == 0)
-            return;
-        
-        [_mapView removeAnnotations:_mapView.annotations];
-        _searchBar.text = nil;
-        [_selectedVenueArray removeAllObjects];
-        [self setCenter:_coordinate.latitude setCentre:_coordinate.longitude latSpan:0.25 lonSpan:0.22];
-        
-        _guidanceView.hidden = NO;
-        //self.navigationItem.leftBarButtonItem.enabled  = NO;
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-    }
+    // ここでSecondViewのテーブルをリロードするメソッドを投げる
+    [[NSNotificationCenter defaultCenter] postNotificationName:HTReloadMyPageNotification object:self userInfo:nil];
     
-    // スポットを削除
-    else if (alertView.tag == 4) {
-        
-        if (buttonIndex == 0)
-            return;
-        
-        for (SLAnnotation *annotation in _mapView.annotations) {
-            NSString *annotationVenueId = [annotation.attributes objectForKey:@"id"];
-            NSString *nowSelectedVenueId = [[_selectedVenueArray objectAtIndex:_nowSelectedIndex] objectForKey:@"id"];
-            if ([annotationVenueId isEqualToString:nowSelectedVenueId]) {
-                [_mapView removeAnnotation:annotation];
-                [_selectedVenueArray removeObjectAtIndex:_nowSelectedIndex];
-                
-                if (_selectedVenueArray.count == 0) {
-                    //self.navigationItem.leftBarButtonItem.enabled  = NO;
-                    self.navigationItem.rightBarButtonItem.enabled = NO;
-                }
-                
-                return;
-            }
-        }
-    }
+    [UIAlertView showWithTitle:nil
+                       message:@"スポットリストが保存されました"
+             cancelButtonTitle:@"OK"
+             otherButtonTitles:nil
+                      tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                          self.tabBarController.selectedIndex = 1;
+                          
+                          // マップのアノテーションをクリア
+                          [_mapView removeAnnotations:_mapView.annotations];
+                          _searchBar.text = nil;
+                          [_selectedVenueArray removeAllObjects];
+                          [self setCenter:_mapView latPoint:_coordinate.latitude lonPoint:_coordinate.longitude latSpan:0.25 lonSpan:0.22];
+                          
+                          _guidanceView.hidden = NO;
+                          self.navigationItem.rightBarButtonItem.enabled = NO;
+                      }];
 }
+
+
+
 
 
 #pragma mark - UISearchBar delegate
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    //NSLog(@"%s",__func__);
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
-//    CGRect frame = _guidanceView.frame;
-//    frame.origin.y -= 44;
-//    
-//    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-//        _searchBar.frame = CGRectMake(0, 20, 320, 44);
-//        _guidanceView.frame = frame;
-//    }];
-    _searchBar.showsCancelButton = YES;
+    [self performSelector:@selector(moveSeachBarAbove) withObject:nil afterDelay:0.01];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar*)searchBar
 {
     //NSLog(@"%s",__func__);
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-
-    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-        _searchBar.frame = CGRectMake(0, 64, 320, 44);
-    }];
-
+    //[self performSelector:@selector(moveSeachBarBelow) withObject:nil afterDelay:0.0];
     [_searchBar resignFirstResponder];
     _searchBar.showsCancelButton = NO;
     _tableView.hidden = YES;
+    
+//    CGRect selfFrame = self.view.frame;
+//    selfFrame.origin.y += 44;
+//
+//    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+//        self.view.frame = selfFrame;
+//        //_searchBar.frame = CGRectMake(0, 64, 320, 44);
+//    }];
+//
+//    [_searchBar resignFirstResponder];
+//    _searchBar.showsCancelButton = NO;
+//    _tableView.hidden = YES;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -460,7 +486,6 @@
     double lat = [[location objectForKey:@"lat"] doubleValue];
     double lon = [[location objectForKey:@"lng"] doubleValue];
     //NSLog(@"loc : %f, %f",lat, lon);
-    
     
     if (!self.selectedVenueArray) {
         self.selectedVenueArray = [[NSMutableArray alloc] init];

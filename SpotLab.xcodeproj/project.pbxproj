@@ -20,6 +20,8 @@
 		E10E337E19C9019100415D65 /* MyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337819C9019100415D65 /* MyListViewController.m */; };
 		E10E337F19C9019100415D65 /* SpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337A19C9019100415D65 /* SpotDetailViewController.m */; };
 		E10E338019C9019100415D65 /* SpotsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337C19C9019100415D65 /* SpotsMapViewController.m */; };
+		E11C97C01A07315B005DAF97 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E11C97BF1A07315B005DAF97 /* UIAlertView+Blocks.m */; };
+		E11C97C61A0731D5005DAF97 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E11C97C51A0731D5005DAF97 /* UIActionSheet+Blocks.m */; };
 		E12D88EF18DE78AE00D0468A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88EE18DE78AE00D0468A /* Foundation.framework */; };
 		E12D88F118DE78AE00D0468A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88F018DE78AE00D0468A /* CoreGraphics.framework */; };
 		E12D88F318DE78AE00D0468A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88F218DE78AE00D0468A /* UIKit.framework */; };
@@ -74,6 +76,10 @@
 		E10E337A19C9019100415D65 /* SpotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotDetailViewController.m; path = Controllers/SpotDetailViewController.m; sourceTree = "<group>"; };
 		E10E337B19C9019100415D65 /* SpotsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotsMapViewController.h; path = Controllers/SpotsMapViewController.h; sourceTree = "<group>"; };
 		E10E337C19C9019100415D65 /* SpotsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotsMapViewController.m; path = Controllers/SpotsMapViewController.m; sourceTree = "<group>"; };
+		E11C97BE1A07315B005DAF97 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Blocks.h"; path = "Utils/UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		E11C97BF1A07315B005DAF97 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Blocks.m"; path = "Utils/UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		E11C97C41A0731D5005DAF97 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIActionSheet+Blocks.h"; path = "Utils/UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		E11C97C51A0731D5005DAF97 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+Blocks.m"; path = "Utils/UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
 		E12D88EB18DE78AE00D0468A /* SpotLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12D88EE18DE78AE00D0468A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E12D88F018DE78AE00D0468A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -194,6 +200,10 @@
 		E1383AA7196FA00B0080E610 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E11C97C41A0731D5005DAF97 /* UIActionSheet+Blocks.h */,
+				E11C97C51A0731D5005DAF97 /* UIActionSheet+Blocks.m */,
+				E11C97BE1A07315B005DAF97 /* UIAlertView+Blocks.h */,
+				E11C97BF1A07315B005DAF97 /* UIAlertView+Blocks.m */,
 				E10E335819C900F800415D65 /* SLAnnotation.h */,
 				E10E335919C900F800415D65 /* SLAnnotation.m */,
 				E10E335A19C900F800415D65 /* SLArrowView.h */,
@@ -407,7 +417,9 @@
 				E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */,
 				E10E336719C900F800415D65 /* SLNotification.m in Sources */,
 				E10E336919C900F800415D65 /* URLCodec.m in Sources */,
+				E11C97C01A07315B005DAF97 /* UIAlertView+Blocks.m in Sources */,
 				E10E336619C900F800415D65 /* SLIndicatorBlockView.m in Sources */,
+				E11C97C61A0731D5005DAF97 /* UIActionSheet+Blocks.m in Sources */,
 				E1D44832196F6ACF00BA868C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

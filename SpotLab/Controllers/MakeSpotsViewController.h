@@ -8,7 +8,9 @@
 
 #import <MapKit/MapKit.h>
 
-@interface FirstViewController : UIViewController
+//#define NOTIF_SpotsModel_GetSpots   @"NOTIF_SpotsModel_GetSpots"
+
+@interface MakeSpotsViewController : UIViewController
 <MKMapViewDelegate, UISearchBarDelegate, UITableViewDelegate,UITableViewDataSource, UIActionSheetDelegate, CLLocationManagerDelegate>
 
 @end

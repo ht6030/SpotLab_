@@ -6,16 +6,16 @@
 //  Copyright (c) 2014年 高橋 弘. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "MyListViewController.h"
 #import "SpotsMapViewController.h"
-#import "HTNotification.h"
+#import "SLNotification.h"
 
-@interface SecondViewController ()
+@interface MyListViewController ()
 //@property (strong, nonatomic) NSDictionary *savedDictionary;
 @property (strong, nonatomic) NSMutableArray *storedArray;
 @end
 
-@implementation SecondViewController
+@implementation MyListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -104,7 +104,8 @@
     //[self performSegueWithIdentifier:@"showSpotsDetail" sender:self];
 
     SpotsMapViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SpotsMapScene"];
-    vc.venueArray = venueArray;
+    vc.selectedVenueArray = venueArray;
+    vc.title = [listDict objectForKey:@"title"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -168,7 +169,7 @@
         
         NSDictionary *listDict = [_storedArray objectAtIndex:0];
         NSMutableArray *venueArray = [listDict objectForKey:@"venues"];
-        vc.venueArray = venueArray;
+        vc.selectedVenueArray = venueArray;
     }
     
     // Get the new view controller using [segue destinationViewController].

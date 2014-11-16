@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 高橋 弘. All rights reserved.
 //
 
-#import "HTArrowView.h"
+#import "SLArrowView.h"
 
-@implementation HTArrowView
+@implementation SLArrowView
 
 - (id)initWithFrame:(CGRect)frame
 {

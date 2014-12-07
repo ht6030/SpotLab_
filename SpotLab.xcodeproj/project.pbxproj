@@ -29,13 +29,13 @@
 		E12D891218DE78AF00D0468A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88EE18DE78AE00D0468A /* Foundation.framework */; };
 		E12D891318DE78AF00D0468A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D88F218DE78AE00D0468A /* UIKit.framework */; };
 		E12D892718DE81E400D0468A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12D892618DE81E400D0468A /* MapKit.framework */; };
+		E173757D1A184332000FA688 /* hoge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E173757C1A184332000FA688 /* hoge.swift */; };
+		E17375811A184751000FA688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17375801A184751000FA688 /* AppDelegate.swift */; };
 		E1B38841196F91AE004F1A49 /* SpotLabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4483D196F6AE700BA868C /* SpotLabTests.m */; };
 		E1B38842196F926D004F1A49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D44839196F6AE700BA868C /* InfoPlist.strings */; };
-		E1D44827196F6ACF00BA868C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D44807196F6ACF00BA868C /* AppDelegate.m */; };
 		E1D44829196F6ACF00BA868C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D4480A196F6ACF00BA868C /* InfoPlist.strings */; };
 		E1D44830196F6ACF00BA868C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D44818196F6ACF00BA868C /* Images.xcassets */; };
 		E1D44831196F6ACF00BA868C /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D4481A196F6ACF00BA868C /* Main.strings */; };
-		E1D44832196F6ACF00BA868C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D4481C196F6ACF00BA868C /* main.m */; };
 		E1D4483E196F6AE700BA868C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D44839196F6AE700BA868C /* InfoPlist.strings */; };
 		E1D4483F196F6AE700BA868C /* SpotLabTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1D4483C196F6AE700BA868C /* SpotLabTests-Info.plist */; };
 /* End PBXBuildFile section */
@@ -87,19 +87,20 @@
 		E12D890F18DE78AF00D0468A /* SpotLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12D891018DE78AF00D0468A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E12D892618DE81E400D0468A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E1D44806196F6ACF00BA868C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E1D44807196F6ACF00BA868C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E173757B1A184331000FA688 /* SpotLab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotLab-Bridging-Header.h"; sourceTree = "<group>"; };
+		E173757C1A184332000FA688 /* hoge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hoge.swift; path = Utils/hoge.swift; sourceTree = "<group>"; };
+		E17375801A184751000FA688 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1D4480B196F6ACF00BA868C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1D44818196F6ACF00BA868C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1D44819196F6ACF00BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1D4481B196F6ACF00BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		E1D4481C196F6ACF00BA868C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1D44821196F6ACF00BA868C /* SpotLab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SpotLab-Info.plist"; sourceTree = "<group>"; };
 		E1D44822196F6ACF00BA868C /* SpotLab-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpotLab-Prefix.pch"; sourceTree = "<group>"; };
 		E1D4483A196F6AE700BA868C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1D4483B196F6AE700BA868C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1D4483C196F6AE700BA868C /* SpotLabTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SpotLabTests-Info.plist"; sourceTree = "<group>"; };
 		E1D4483D196F6AE700BA868C /* SpotLabTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotLabTests.m; sourceTree = "<group>"; };
+		E1FC67521A18945400B7A105 /* SpotLab-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotLab-Swift.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,11 +189,12 @@
 		E1383AA6196F9F3E0080E610 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E173757B1A184331000FA688 /* SpotLab-Bridging-Header.h */,
 				E1D44821196F6ACF00BA868C /* SpotLab-Info.plist */,
 				E1D4480A196F6ACF00BA868C /* InfoPlist.strings */,
-				E1D4481C196F6ACF00BA868C /* main.m */,
 				E1D44822196F6ACF00BA868C /* SpotLab-Prefix.pch */,
 				E1D4481A196F6ACF00BA868C /* Main.strings */,
+				E1FC67521A18945400B7A105 /* SpotLab-Swift.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -214,6 +216,7 @@
 				E10E335F19C900F800415D65 /* SLNotification.m */,
 				E10E336219C900F800415D65 /* URLCodec.h */,
 				E10E336319C900F800415D65 /* URLCodec.m */,
+				E173757C1A184332000FA688 /* hoge.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -249,8 +252,7 @@
 		E1D44805196F6ACF00BA868C /* SpotLab */ = {
 			isa = PBXGroup;
 			children = (
-				E1D44806196F6ACF00BA868C /* AppDelegate.h */,
-				E1D44807196F6ACF00BA868C /* AppDelegate.m */,
+				E17375801A184751000FA688 /* AppDelegate.swift */,
 				E18AB17819C28133001F440E /* Models */,
 				E10E337019C9013E00415D65 /* Views */,
 				E10E337419C9017E00415D65 /* Controllers */,
@@ -411,16 +413,16 @@
 				E10E337E19C9019100415D65 /* MyListViewController.m in Sources */,
 				E10E337D19C9019100415D65 /* MakeSpotsViewController.m in Sources */,
 				E10E336C19C9011000415D65 /* DataManager.m in Sources */,
-				E1D44827196F6ACF00BA868C /* AppDelegate.m in Sources */,
 				E10E336519C900F800415D65 /* SLArrowView.m in Sources */,
 				E10E336419C900F800415D65 /* SLAnnotation.m in Sources */,
+				E173757D1A184332000FA688 /* hoge.swift in Sources */,
 				E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */,
 				E10E336719C900F800415D65 /* SLNotification.m in Sources */,
 				E10E336919C900F800415D65 /* URLCodec.m in Sources */,
 				E11C97C01A07315B005DAF97 /* UIAlertView+Blocks.m in Sources */,
 				E10E336619C900F800415D65 /* SLIndicatorBlockView.m in Sources */,
 				E11C97C61A0731D5005DAF97 /* UIActionSheet+Blocks.m in Sources */,
-				E1D44832196F6ACF00BA868C /* main.m in Sources */,
+				E17375811A184751000FA688 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,10 +558,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpotLab/SpotLab-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SpotLab/SpotLab-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = SpotLab;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpotLab/SpotLab-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -570,10 +576,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpotLab/SpotLab-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SpotLab/SpotLab-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = SpotLab;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpotLab/SpotLab-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

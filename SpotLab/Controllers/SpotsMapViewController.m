@@ -7,7 +7,8 @@
 //
 
 #import "SpotsMapViewController.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
+#import "SpotLab-Swift.h"
 #import "SLAnnotation.h"
 #import "SpotDetailViewController.h"
 #import "AFNetworking.h"

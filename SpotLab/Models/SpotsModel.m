@@ -7,10 +7,14 @@
 //
 
 #import "SpotsModel.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
+#import "SpotLab-Swift.h"
 #import "AFNetworking.h"
 #import "DataManager.h"
 #import <MapKit/MapKit.h>
+
+#define FS_CLIENT_ID       @"EQV3AQWPZOOAINWCFBUCZDGNLE5WEDX3P0HC5QGF2OG0CCIS"
+#define FS_CLIENT_SECRET   @"JISUTSGRFSRNHPBI4UIAPO0BZKPHCKC23GJUEV1ZLCSOSN3Q"
 
 @implementation SpotsModel
 

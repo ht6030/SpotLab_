@@ -10,10 +10,10 @@
 		B6453A18C63B48AB88EC77D9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C96C0CAFF04B9791A7622C /* libPods.a */; };
 		E10E336419C900F800415D65 /* SLAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335919C900F800415D65 /* SLAnnotation.m */; };
 		E10E336519C900F800415D65 /* SLArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335B19C900F800415D65 /* SLArrowView.m */; };
-		E10E336619C900F800415D65 /* SLIndicatorBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335D19C900F800415D65 /* SLIndicatorBlockView.m */; };
-		E10E336719C900F800415D65 /* SLNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E335F19C900F800415D65 /* SLNotification.m */; };
-		E10E336919C900F800415D65 /* URLCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336319C900F800415D65 /* URLCodec.m */; };
-		E10E336C19C9011000415D65 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336B19C9011000415D65 /* DataManager.m */; };
+               F2E1E1E1E1E1E1E1E1E1E1E0 /* SLIndicatorBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1E1E1E1E1E1E1E1E1E1E0 /* SLIndicatorBlockView.swift */; };
+               F2E1E1E1E1E1E1E1E1E1E101 /* SLNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1E1E1E1E1E1E1E1E1E101 /* SLNotification.swift */; };
+               F2E1E1E1E1E1E1E1E1E1E1F1 /* URLCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1E1E1E1E1E1E1E1E1E1F1 /* URLCodec.swift */; };
+               F2E1E1E1E1E1E1E1E1E1E1E1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1E1E1E1E1E1E1E1E1E1E1 /* DataManager.swift */; };
 		E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E336E19C9011E00415D65 /* SpotsModel.m */; };
 		E10E337319C9015B00415D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10E337119C9015B00415D65 /* Main.storyboard */; };
 		E10E337D19C9019100415D65 /* MakeSpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10E337619C9019100415D65 /* MakeSpotsViewController.m */; };
@@ -58,13 +58,13 @@
 		E10E335A19C900F800415D65 /* SLArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLArrowView.h; path = Utils/SLArrowView.h; sourceTree = "<group>"; };
 		E10E335B19C900F800415D65 /* SLArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLArrowView.m; path = Utils/SLArrowView.m; sourceTree = "<group>"; };
 		E10E335C19C900F800415D65 /* SLIndicatorBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLIndicatorBlockView.h; path = Utils/SLIndicatorBlockView.h; sourceTree = "<group>"; };
-		E10E335D19C900F800415D65 /* SLIndicatorBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLIndicatorBlockView.m; path = Utils/SLIndicatorBlockView.m; sourceTree = "<group>"; };
-		E10E335E19C900F800415D65 /* SLNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLNotification.h; path = Utils/SLNotification.h; sourceTree = "<group>"; };
-		E10E335F19C900F800415D65 /* SLNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLNotification.m; path = Utils/SLNotification.m; sourceTree = "<group>"; };
+               F1E1E1E1E1E1E1E1E1E1E1E0 /* SLIndicatorBlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SLIndicatorBlockView.swift; path = Utils/SLIndicatorBlockView.swift; sourceTree = "<group>"; };
+               E10E335E19C900F800415D65 /* SLNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLNotification.h; path = Utils/SLNotification.h; sourceTree = "<group>"; };
+               F1E1E1E1E1E1E1E1E1E1E101 /* SLNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SLNotification.swift; path = Utils/SLNotification.swift; sourceTree = "<group>"; };
 		E10E336219C900F800415D65 /* URLCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLCodec.h; path = Utils/URLCodec.h; sourceTree = "<group>"; };
-		E10E336319C900F800415D65 /* URLCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLCodec.m; path = Utils/URLCodec.m; sourceTree = "<group>"; };
-		E10E336A19C9011000415D65 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Models/DataManager/DataManager.h; sourceTree = "<group>"; };
-		E10E336B19C9011000415D65 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Models/DataManager/DataManager.m; sourceTree = "<group>"; };
+               F1E1E1E1E1E1E1E1E1E1E1F1 /* URLCodec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLCodec.swift; path = Utils/URLCodec.swift; sourceTree = "<group>"; };
+               E10E336A19C9011000415D65 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Models/DataManager/DataManager.h; sourceTree = "<group>"; };
+               F1E1E1E1E1E1E1E1E1E1E1E1 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Models/DataManager/DataManager.swift; sourceTree = "<group>"; };
 		E10E336D19C9011E00415D65 /* SpotsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotsModel.h; path = Models/SpotsModel.h; sourceTree = "<group>"; };
 		E10E336E19C9011E00415D65 /* SpotsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotsModel.m; path = Models/SpotsModel.m; sourceTree = "<group>"; };
 		E10E337219C9015B00415D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SpotLab/Views/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -210,12 +210,12 @@
 				E10E335919C900F800415D65 /* SLAnnotation.m */,
 				E10E335A19C900F800415D65 /* SLArrowView.h */,
 				E10E335B19C900F800415D65 /* SLArrowView.m */,
-				E10E335C19C900F800415D65 /* SLIndicatorBlockView.h */,
-				E10E335D19C900F800415D65 /* SLIndicatorBlockView.m */,
-				E10E335E19C900F800415D65 /* SLNotification.h */,
-				E10E335F19C900F800415D65 /* SLNotification.m */,
-				E10E336219C900F800415D65 /* URLCodec.h */,
-				E10E336319C900F800415D65 /* URLCodec.m */,
+                               E10E335C19C900F800415D65 /* SLIndicatorBlockView.h */,
+                               F1E1E1E1E1E1E1E1E1E1E1E0 /* SLIndicatorBlockView.swift */,
+                               E10E335E19C900F800415D65 /* SLNotification.h */,
+                               F1E1E1E1E1E1E1E1E1E1E101 /* SLNotification.swift */,
+                               E10E336219C900F800415D65 /* URLCodec.h */,
+                               F1E1E1E1E1E1E1E1E1E1E1F1 /* URLCodec.swift */,
 				E173757C1A184332000FA688 /* hoge.swift */,
 			);
 			name = Utils;
@@ -234,8 +234,8 @@
 		E18AB17C19C281B4001F440E /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				E10E336A19C9011000415D65 /* DataManager.h */,
-				E10E336B19C9011000415D65 /* DataManager.m */,
+                               E10E336A19C9011000415D65 /* DataManager.h */,
+                               F1E1E1E1E1E1E1E1E1E1E1E1 /* DataManager.swift */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -416,13 +416,13 @@
 				E10E336519C900F800415D65 /* SLArrowView.m in Sources */,
 				E10E336419C900F800415D65 /* SLAnnotation.m in Sources */,
 				E173757D1A184332000FA688 /* hoge.swift in Sources */,
-				E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */,
-				E10E336719C900F800415D65 /* SLNotification.m in Sources */,
-				E10E336919C900F800415D65 /* URLCodec.m in Sources */,
-				E11C97C01A07315B005DAF97 /* UIAlertView+Blocks.m in Sources */,
-				E10E336619C900F800415D65 /* SLIndicatorBlockView.m in Sources */,
-				E11C97C61A0731D5005DAF97 /* UIActionSheet+Blocks.m in Sources */,
-				E17375811A184751000FA688 /* AppDelegate.swift in Sources */,
+                               E10E336F19C9011E00415D65 /* SpotsModel.m in Sources */,
+                               F2E1E1E1E1E1E1E1E1E1E101 /* SLNotification.swift in Sources */,
+                               F2E1E1E1E1E1E1E1E1E1E1F1 /* URLCodec.swift in Sources */,
+                               E11C97C01A07315B005DAF97 /* UIAlertView+Blocks.m in Sources */,
+                               F2E1E1E1E1E1E1E1E1E1E1E0 /* SLIndicatorBlockView.swift in Sources */,
+                               E11C97C61A0731D5005DAF97 /* UIActionSheet+Blocks.m in Sources */,
+                               E17375811A184751000FA688 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

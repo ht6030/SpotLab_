@@ -11,8 +11,6 @@
 #import "AFNetworking.h"
 //#import "AppDelegate.h"
 #import "SpotLab-Swift.h"
-#import "URLCodec.h"
-#import "SLNotification.h"
 #import "SLIndicatorBlockView.h"
 #import "SpotDetailViewController.h"
 #import "SpotsModel.h"

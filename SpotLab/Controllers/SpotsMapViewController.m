@@ -12,7 +12,6 @@
 #import "SLAnnotation.h"
 #import "SpotDetailViewController.h"
 #import "AFNetworking.h"
-#import "URLCodec.h"
 #import "SLIndicatorBlockView.h"
 #import "SpotsModel.h"
 

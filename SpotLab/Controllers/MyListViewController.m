@@ -8,7 +8,7 @@
 
 #import "MyListViewController.h"
 #import "SpotsMapViewController.h"
-#import "SLNotification.h"
+#import "SpotLab-Swift.h"
 
 @interface MyListViewController ()
 //@property (strong, nonatomic) NSDictionary *savedDictionary;
